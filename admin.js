@@ -8,13 +8,13 @@ router.get('/admin', (req, res) => {
 })
 
 
-//localhost / admin / addUser
-// router.get('/adminAddStaff', (req, res) => {
-//     res.render('addUser')
-// })
+//localhost/admin/addUser
+router.get('/adminAddStaff', (req, res) => {
+    res.render('addUser')
+})
 
-// router.get('/adminAddTrainer', (req, res) => {
-//     res.render('addUser')
-// })
+router.get('/adminAddTrainer', (req, res) => {
+    res.render('addUser')
+})
 
 module.exports = router;
