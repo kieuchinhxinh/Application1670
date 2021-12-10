@@ -1,117 +1,85 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <meta charset=”utf-8″>
+<style>
+    span{
+  color: rgb(157, 60, 4);}
 
-    <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″/>
+  h1{
+      font-family: Spectral, serif;
+      font-weight: bold;
+      font-size: 40px;
+      color: rgb(21, 6, 39);
+      text-align: center;
 
-    <style>
-
-* {
-
-margin: 0;
-
-padding: 0;
-
-}
-
-.wrapper {
-
-width: 900px;
-
-margin: 0 auto;
-
-}
-
-.head {
-
-height: 100px;
-
-background: #e7e7e7;
-
-border: 1px solid #000;
-
-margin-bottom: 10px;
-
-}
-
-main {
-
-width: 900px;
-
-height: 300px;
-
-clear: both;
-
-}
-
-.content {
-
-width: 580px;
-
-height: 300px;
-
-background: #e7e7e7;
-
-border: 1px solid #000;
-
-float: left;
-
-margin-bottom: 10px;
-
-}
-
-.sidebar {
-
-width: 300px;
-
-height: 300px;
-
-background: #e7e7e7;
-
-border: 1px solid #000;
-
-float: right;
-
-}
-
-.footer{
-height: 100px;
-background: #e7e7e7;
-border: 1px solid #000;
-clear: both;
-}
+  }
+  h5{
+      font-family: Helvetica, sans-serif;
+      font-weight: bold;
+      color: rgb(118, 118, 118);
+  }
 
 </style>
-    <div class="wrapper">
-
-        <div class="head">
-
-            Đây là phần đầu trang web
-
-        </div>
-
-        <div class="main">
-
-            <div class="content">
-
-                Đây là nội dung trang web
-
+</head>
+<body>
+    <section class="vh-100" style="background:#b4c7e9;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img
+                src="https://i.pinimg.com/originals/16/92/b5/1692b58528059e4dce5a4b5e3e98dd2e.jpg"
+                alt="login form"
+                class="img-fluid" style="border-radius: 0.5rem 0 0 0.5rem;"
+              />
             </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
 
-            <div class="sidebar">
+                <form>
 
-                Đây là sidebar trang web
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                    <span class="h2 fw-bold mb-0"><h1>University of Greenwich</h1></span>
+                  </div>
 
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17" style="color: rgb(90,89,89);">Email address</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27" style="color: rgb(90, 89, 89);">Password</label>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button class="btn btn-dark btn-lg btn-block" type="button" style="background-color: rgb(11, 43, 81);">SIGN IN</button>
+                  </div>
+
+                  <a class="small text-muted" href="#!" >Forgot password?</a>
+                  <a href="#!" class="small text-muted" >Terms of use.</a>
+                  <a href="#!" class="small text-muted" >Privacy policy</a>
+                </form>
+              </div>
             </div>
-
+          </div>
         </div>
-
-        <div class="footer">
-
-            Đây là chân trang web
-
-        </div>
-
+      </div>
     </div>
-
+  </div>
+</section>
+</body>
 </html>
