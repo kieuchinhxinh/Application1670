@@ -5,11 +5,149 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"></link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Index Page</title>
+    <style>
+         .top-nav-index{
+        background-color:  #85467b	;
+       color: rgb(253, 253, 253);
+        font-size: 30px;
+        padding:10px 20px;
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin: auto;}
+    
+      .global-footer{
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #333;
+  margin-top: 800px;
+  bottom: 0;
+  width: 100%;
+}
+      h6{
+          color: white;
+          margin-left: 100px;
+      }
+      strong{
+          font-size: 15px;
+          margin-left: 15px;
+
+      }
+      .w3-bar{
+          color: white;
+      }
+     
+    </style>
 </head>
 <body>
-    <h1 class="redText">Hello -{{userInfo.name}} - {{userInfo.role}}</h1>
-    <br>
-   
+    <div class="top-nav-index"><a>FPT CO.</a></div>
+    <div class=" mess-rol" style="background-color:white;">
+    <strong>Info : </strong>{{userInfo.name}} - {{userInfo.role}}
+  </div>
+   <div class="w3-bar" style="background-color:#85467b;">
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Course Category</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">View All Course Category</a>
+        <a href="#" class="w3-bar-item w3-button">Create New Course Category</a>
+        <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Course</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">View All Course</a>
+        <a href="#" class="w3-bar-item w3-button">Create New Course</a>
+        <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Trainee</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">View All Trainee</a>
+        <a href="#" class="w3-bar-item w3-button">Create New Traine</a>
+        <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Trainer</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">View All Trainer</a>
+        <a href="#" class="w3-bar-item w3-button">Create New Trainer</a>
+        <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Staff</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">View All Staff</a>
+        <a href="#" class="w3-bar-item w3-button">Create New Staff</a>
+        <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+      </div>
+    </div>
+    
+  </div>
+      <div class="global-footer">
+          <div class="region region-global-footer row">
+        <div id="block-menu-menu-global-footer-with-logo" class="block block-menu  col-md-6 col-lg-3 py-4">
+
+    <div class="content-footer" >
+        <h6> © 2021 FPT CO.</h6>
+        <ul class="menu" style="margin-left: 60px;">
+<li><a href="/" title="">Contact the University</a></li>
+<li><a href="/" title="">Accessibility</a></li>
+<li><a href="/" title="">Freedom of information</a></li>
+<li><a href="/" title="">Privacy policy & cookies</a></li>
+<li><a href="/" title="">Terms and conditions</a></li>
+</ul>    </div>
+</div>
+<div id="block-menu-menu-global-footer-study-at-camb" class="block block-menu  col-md-6 col-lg-3 py-4">
+    <div class="content-footer" >
+<h6>Study at FPT CO.</h6>
+<ul class="menu"style="margin-left: 60px;">
+<li><a href="/" title="">Undergraduate</a></li>
+<li><a href="/" title="">Postgraduate</a></li>
+<li><a href="/" title="">Continuing education</a></li>
+<li><a href="/" title="">Professional education</a></li>
+<li><a href="/" title="">Courses in education</a></li>
+</ul>    </div>
+</div>
+<div id="block-menu-menu-global-footer-about-uni" class="block block-menu  col-md-6 col-lg-3 py-4">
+
+        
+    <div class="content-footer">
+<h6>About the University</h6>
+<ul class="menu"style="margin-left: 60px;">
+<li><a href="/" title="">How the University work</a></li>
+<li><a href="/" title="">Give to FPT CO.</a></li>
+<li><a href="/" title="">Jobs</a></li>
+<li><a href="/" title="">Maps</a></li>
+<li><a href="/" title="">Visiting the University</a></li>
+</ul>    </div>
+</div>
+<div id="block-menu-menu-global-footer-research" class="block block-menu  col-md-6 col-lg-3 py-4">
+
+        
+    <div class="content-footer">
+    <h6>Research at FPT CO.</h6>
+<ul class="menu"style="margin-left: 60px;">
+<li><a href="/" title="">Research news</a></li>
+<li><a href="/" title="">About research at FPT CO.</a></li>
+<li><a href="/" title="">Public engagement</a></li>
+<li><a href="/" title="">FPT CO A-Z</a></li>
+<li><a href="/" title="">Spotlight on...</a></li>
+</ul>    </div>
+</div>
+    </div>
+    </div>
+
+ 
 </body>
 </html>
