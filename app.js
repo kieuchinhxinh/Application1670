@@ -1,18 +1,20 @@
 const express = require('express')
 const session = require('express-session')
 const { checkUserRole } = require('./databaseHandler')
-const { requiresLogin } = require('./dbLib')
-var hbs = require('hbs');
+const {
+    requiresLogin,
+    requiresAdmin
+} = require('./dbLib')
+var cookieParser = require('cookie-parser')
+
 const app = express()
 
 app.set('view engine', 'hbs')
 
+app.use(express.static('public'))
 
-hbs.registerPartials(__dirname + '/views/partial/');
-
-app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }))
-app.use(session({ secret: '124447yd@@$%%#', cookie: { maxAge: 900000 }, saveUninitialized: false, resave: false }))
+app.use(session({ secret: '124447yd@@$%%#', cookie: { maxAge: 60000 }, saveUninitialized: false, resave: false }))
 
 app.get('/', requiresLogin, (req, res) => {
     const user = req.session["User"]
@@ -54,6 +56,7 @@ app.post('/login', async(req, res) => {
     }
 })
 
+
 app.get('/login', (req, res) => {
     res.render('login')
 })
@@ -63,17 +66,27 @@ app.get('/logout', (req, res) => {
     res.render('login')
 })
 
-// const adminController = require('./controllers/admin')
-// app.use('/admin', adminController)
+const adminController = require('./controllers/admin')
+app.use('/admin', adminController)
 
-const staffController = require('./controllers/staff')
-app.use('/staff', staffController)
+// const staffController = require('./controllers/staff')
+// app.use('/staff', staffController)
 
 // const trainerController = require('./controllers/trainer')
 // app.use('/trainer', trainerController)
 
 // const traineeController = require('./controllers/trainee')
 // app.use('/trainee', traineeController)
+
+
+
+// const staffController = require('./staff')
+// app.use('/staff',staffController)
+
+// const trainerController = require('./trainer')
+// app.use('/trainer',trainerController)
+
+
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT)
