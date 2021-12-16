@@ -2,13 +2,15 @@ const express = require('express')
 const session = require('express-session')
 const { checkUserRole } = require('./databaseHandler')
 const { requiresLogin } = require('./dbLib')
-
+var hbs = require('hbs');
 const app = express()
 
 app.set('view engine', 'hbs')
 
-app.use(express.static('public'))
 
+hbs.registerPartials(__dirname + '/views/partial/');
+
+app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }))
 app.use(session({ secret: '124447yd@@$%%#', cookie: { maxAge: 900000 }, saveUninitialized: false, resave: false }))
 
@@ -35,7 +37,7 @@ app.post('/login', async(req, res) => {
             name: name,
             role: role
         }
-        res.redirect('/staffIndex')
+        res.redirect('/staff')
 
     } else if (role == "trainee") {
         req.session["trainee"] = {
@@ -61,11 +63,11 @@ app.get('/logout', (req, res) => {
     res.render('login')
 })
 
-const adminController = require('./controllers/admin')
-app.use('/admin', adminController)
+// const adminController = require('./controllers/admin')
+// app.use('/admin', adminController)
 
-// const staffController = require('./controllers/staff')
-// app.use('/staff', staffController)
+const staffController = require('./controllers/staff')
+app.use('/staff', staffController)
 
 // const trainerController = require('./controllers/trainer')
 // app.use('/trainer', trainerController)

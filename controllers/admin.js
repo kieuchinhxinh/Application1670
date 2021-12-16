@@ -7,11 +7,11 @@ router.get('/', (req, res) => {
     res.render('admin')
 })
 
-router.get('/addUser', (req, res) => {
+router.get('/adminAddUser', (req, res) => {
         res.render('adminAddUser')
     })
     //Submit add User
-router.post('/addUser', (req, res) => {
+router.post('/adminAddUser', (req, res) => {
     const name = req.body.txtName
     const role = req.body.Role
     const pass = req.body.txtPassword
