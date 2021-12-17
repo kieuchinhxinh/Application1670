@@ -38,20 +38,20 @@
         </div>
         <div class="modal-body">
             <div class="py-1">
-            <form class="form" novalidate="">
+            <form class="form" method="POST" action="addTrainee">
                 <div class="row">
                 <div class="col">
                     <div class="row">
                     <div class="col">
                         <div class="form-group">
                         <label>Full Name</label>
-                        <input class="form-control" type="text" name="name" placeholder="Full name">
+                        <input class="form-control" type="text" name="txtName" placeholder="Full name">
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                         <label>Email</label>
-                        <input class="form-control" type="text" placeholder="user@example.com">
+                        <input class="form-control" type="text" placeholder="user@example.com" name="txtEmail">
                         </div>
                     </div>
                     </div>
@@ -60,26 +60,27 @@
                     <div class="col">
                         <div class="form-group">
                         <label>Username</label>
-                        <input class="form-control" type="text" name="userName" placeholder="userName">
+                        <input class="form-control" type="text" name="txtUserName" placeholder="userName">
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
-                        <label>Age</label>
-                        <input class="form-control" type="text" placeholder="Age">
+                        <label>Education</label>
+                        <input class="form-control" type="text" placeholder="Education" name="txtEducation">
                         </div>
                     </div>
                     </div>
-              
-                     <div class="row">
-                    <div class="col-8">
+            <div class="row">
+                <div class="col">
                         <div class="form-group">
-                        <label>Address</label>
-                        <textarea class="form-control" rows="5" placeholder="Address"></textarea> 
+                        <label>Date Of Birth</label>
+                        <input class="form-control" type="text" name="txtDate" placeholder="Date Of Birth">
+                        </div>
+                        </div>
                           </div></div>
                     </div> 
                         <div class="col d-flex justify-content-end">
-                        <button class="btn btn-secondary btn-sm" type="submit">Save</button></div>
+                        <input type="submit" value="Add Trainee"></div>
                  
                 
                 </div>

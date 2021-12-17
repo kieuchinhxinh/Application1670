@@ -1,24 +1,30 @@
 const express = require('express')
-const { insertObject } = require('../databaseHandler')
-const { requireStaff } = require('../dbLib')
+const {
+    insertObject
+} = require('../databaseHandler')
+const {
+    requireStaff
+} = require('../dbLib')
 const router = express.Router()
 
 router.get('/', (req, res) => {
     res.render('staff')
 })
-router.get('/home', (req, res) => { res.render('staff/index') })
+router.get('/home', (req, res) => {
+    res.render('staff/index')
+})
 
-router.get('/staffAddTrainee', (req, res) => {
-        res.render('staffAddTrainee')
+router.get('/addTrainee', (req, res) => {
+        res.render('addTrainee')
     })
     //Submit add User
-router.post('/staffAddTrainee', (req, res) => {
+router.post('/addTrainee', (req, res) => {
     const name = req.body.txtName
     const userName = req.body.txtUserName
     const dateofbirth = req.body.txtDate
     const education = req.body.txtEducation
     const email = req.body.txtEmail
-    const trainee = {
+    const newTrainee = {
         name: name,
         userName: userName,
         age: age,
@@ -26,37 +32,40 @@ router.post('/staffAddTrainee', (req, res) => {
         education: education,
         dateofbirth: dateofbirth
     }
-    insertObject("trainee", objectToInsert)
+    insertObject("trainee", newTrainee)
     res.render('staff')
 })
 
 
-router.get('/staffAddCourseCategory', (req, res) => { res.render('staffAddCourseCategory') })
-router.post('/staffAddCourseCategory', async(req, res) => {
+router.get('/addCourseCategory', (req, res) => {
+    res.render('addCourseCategory')
+})
+router.post('/addCourseCategory', async(req, res) => {
     const ccName = req.body.txtName
     const description = req.body.txtDescription
-    const coursecategory = {
+    const newCourseCategory = {
         coursecategoryName: ccName,
         description: description
     }
-    await insertObject("coursecategory", coursecategory)
+    await insertObject("coursecategory", newCourseCategory)
     res.redirect('/staff')
 
 })
-router.get('/staffAddCourse', (req, res) => { res.render('staffAddCourse') })
-router.post('/staffAddCourse', async(req, res) => {
+router.get('/addCourse', (req, res) => {
+    res.render('addCourse')
+})
+router.post('/addCourse', async(req, res) => {
     const name = req.body.txtName
     const description = req.body.txtDescription
     const trainerId = req.body.txtTrainerId
-    const traineeId = req.body.txtTraineeId
 
-    const course = {
+    const newCourse = {
         courseName: name,
         description: description,
         trainerId: trainerId,
-        traineeId: traineeId
+
     }
-    await insertObject("course", objectToInsert)
+    await insertObject("course", newCourse)
     res.redirect('/staff')
 
 })

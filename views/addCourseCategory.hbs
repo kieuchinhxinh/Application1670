@@ -28,40 +28,31 @@ font-family: Arial, Helvetica, sans-serif;
             color: rgb(16, 54, 39);
             font-weight: bold;
         }
-        .form-cc{
-            margin-left: 22%;
-           font-family: Arial, Helvetica, sans-serif;
-        }
-        .back-pr{
-            margin-top: 15%;
-            margin-left: 20px;
-            background-color: cadetblue;
-            color: rgb(13, 152, 152);
-            border: white;
-            padding: 8px 10px;
-        }
+        
     
 </style>
 </head>
 <body>
  <div class="top-nav-staff"><a>FPT CO.</a></div><br>
  <div class="cc-tittle">Create A Course Category</div><br><br>
- <div class="form-cc">
- <form style="font-size: 15px;">
-  <div class="form-row">
-    <label  class="col-sm-2 col-form-label">Course Category Name</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control"  name="name">
-    </div>
-  </div>
-  <div class="form-row">
-    <label class="col-sm-2 col-form-label">Description</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" name="name" style="height: 120px;">
-     
-    </div>   
-  <button type="button" class="btn btn-info" style="margin-left:60% ;">Save</button>
-  </div></form></div>
-<div class="back-bt"><button type="button" class="back-pr"><a href="/staff" style="color: mintcream;">Previous</a></button></div>
+ <form method="POST" action="addCourseCategory">
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Course Category Name</label>
+                <input class="form-control" type="text" name="txtName" placeholder="Course Category Name">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Description</label>
+                <input class="form-control" type="text" placeholder="Description" name="txtDescription" >
+              </div>
+            </div>
+            <input type="submit" value="Add Trainee"></div>
+          </div>
+ </form>
 </body>
 </html> 
