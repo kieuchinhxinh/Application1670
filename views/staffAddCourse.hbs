@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https:/maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <title>New Trainer</title>
+    <style>
+        body{
+           
+            background:#ffdccd;
+        }
+        h2{
+      font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        } 
+        .top-nav{
+        background-color:  #074a5a
+
+
+;
+       color: rgb(253, 253, 253);
+        font-size: 30px;
+        padding: auto;
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;}
+      a{
+        margin-left: 10px;
+      }
+    </style>
+</head>
+<body> <header><div class="top-nav"><a>FPT CO.</a></div></header>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Create A Course</h2>
+        </div>
+        <div class="modal-body">
+            <div class="py-1">
+            <form class="form" novalidate="" style="font-family: Arial, Helvetica, sans-serif;">
+                <div class="row">
+                <div class="col">
+                    <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                        <label>Course Name</label>
+                        <input class="form-control" type="text" name="name" placeholder="Course Name">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                        <label>Course Detail</label>
+                        <input class="form-control" type="text" placeholder="Description" name="description">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                        <label>Trainer Id</label>
+                        <input class="form-control" type="text" name="trainerId" placeholder="TrainerId">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                        <label>Trainee Id</label>
+                        <input class="form-control" type="text" name="traineeId" placeholder="TraineeId">
+                        </div>
+                    </div>   
+                </div>
+                </div>
+           </div>
+                <div class="col d-flex justify-content-end">
+                   <input type="submit" value="Add Course">
+                </div>
+            
+            </form>
+
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
