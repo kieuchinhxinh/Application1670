@@ -43,5 +43,21 @@ router.post('/staffAddCourseCategory', async(req, res) => {
     res.redirect('/staff')
 
 })
+router.get('/staffAddCourse', (req, res) => { res.render('staffAddCourse') })
+router.post('/staffAddCourse', async(req, res) => {
+    const name = req.body.txtName
+    const description = req.body.txtDescription
+    const trainerId = req.body.txtTrainerId
+    const traineeId = req.body.txtTraineeId
 
+    const course = {
+        courseName: name,
+        description: description,
+        trainerId: trainerId,
+        traineeId: traineeId
+    }
+    await insertObject("course", objectToInsert)
+    res.redirect('/staff')
+
+})
 module.exports = router;
