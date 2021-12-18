@@ -1,17 +1,21 @@
 const express = require('express')
-const { insertObject } = require('../databaseHandler')
-const { requireAdmin } = require('../dbLib')
+const {
+    insertObject
+} = require('../databaseHandler')
+const {
+    requireAdmin
+} = require('../dbLib')
 const router = express.Router()
 
 router.get('/', (req, res) => {
     res.render('admin')
 })
 
-router.get('/adminAddUser', (req, res) => {
-        res.render('adminAddUser')
+router.get('/addUser', (req, res) => {
+        res.render('addUser')
     })
     //Submit add User
-router.post('/adminAddUser', (req, res) => {
+router.post('/addUser', (req, res) => {
     const name = req.body.txtName
     const role = req.body.Role
     const pass = req.body.txtPassword
@@ -23,7 +27,7 @@ router.post('/adminAddUser', (req, res) => {
     insertObject("Users", objectToInsert)
     res.render('admin')
 })
-router.post('/adminAddTrainer', async(req, res) => {
+router.post('/addTrainer', async(req, res) => {
     const name = req.body.txtName
     const userName = req.body.txtUserName
     const age = req.body.txtAge
@@ -43,15 +47,17 @@ router.post('/adminAddTrainer', async(req, res) => {
     res.redirect('/admin')
 
 })
-router.get('/adminAddTrainer', (req, res) => {
-    res.render('adminAddTrainer')
+router.get('/addTrainer', (req, res) => {
+    res.render('addTrainer')
 })
-router.get('/adminViewTrainer', async(req, res) => {
+router.get('/viewTrainer', async(req, res) => {
     let listTrainer = await trainer.find();
-    res.render('adminViewTrainer', { listTrainer: listTrainer })
+    res.render('viewTrainer', {
+        listTrainer: listTrainer
+    })
 })
 
-router.post('/adminAddStaff', async(req, res) => {
+router.post('/addStaff', async(req, res) => {
     const name = req.body.txtName
     const userName = req.body.txtUserName
     const age = req.body.txtAge
@@ -59,18 +65,18 @@ router.post('/adminAddStaff', async(req, res) => {
     const specialty = req.body.txtSpecialty
     const address = req.body.txtAddress
 
-    const staff = {
+    const newStaff = {
         name: name,
         userName: userName,
         age: age,
         email: email,
         address: address
     }
-    await insertObject("staff", staff)
+    await insertObject("staff", newStaff)
     res.redirect('/admin')
 
 })
-router.get('/adminAddStaff', (req, res) => {
-    res.render('adminAddStaff')
+router.get('/addStaff', (req, res) => {
+    res.render('addStaff')
 })
 module.exports = router;
