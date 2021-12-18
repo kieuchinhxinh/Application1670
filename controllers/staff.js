@@ -6,14 +6,12 @@ const {
     requireStaff
 } = require('../dbLib')
 const router = express.Router()
-
 router.get('/', (req, res) => {
     res.render('staff')
 })
-router.get('/home', (req, res) => {
-    res.render('staff/index')
+router.get('/', (req, res) => {
+    res.render('/staff')
 })
-
 router.get('/addTrainee', (req, res) => {
         res.render('addTrainee')
     })
