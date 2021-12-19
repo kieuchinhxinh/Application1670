@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <a href="/trainer">Home</a>
+
+      <li><a href="/logout"> Logout </a></li>
+    <table width="50%" border="1">
+        <tr>
+            <td>Name</td>
+            <td>Ten </td>
+            <td>email</td>
+            <td>education</td>
+            <td>Date of birth</td>
+        </tr>
+        {{# each trainee}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{userName}}</td>
+            <td>{{email}}</td>
+            <td>{{education}}</td>
+            <td>{{dateofbirth}}</td>
+            {{!-- <td><a href="/sanpham/edit?id={{_id}}">Update</a></td> --}}
+        </tr>  
+        {{/each}}
+    </table>
+   
+</body>
+</html>
