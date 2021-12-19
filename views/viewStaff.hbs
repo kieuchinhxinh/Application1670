@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            table {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                border-collapse: collapse;
+                width: 80%;
+                margin: auto;
+                height: auto;
+                padding: 20px;
+
+
+            }
+
+            tr,
+            td {
+                border: 0.25px solid #ffffff;
+                text-align: center;
+                padding: 10px;
+
+            }
+
+            tr,
+            td {
+                border: 0.25px solid #061e48;
+                text-align: center;
+                padding: 10px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #ffffff;
+            }
+
+
+            .top-nav {
+                background-color: #2c3563;
+                color: rgb(253, 253, 253);
+                font-size: 30px;
+                padding: 6px 12px;
+                font-weight: bold;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+
+            .ql {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                margin-left: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="top-nav"><a>FPT CO.</a></div>
+        </header>
+        <br>
+        <div class="ql">...then see staff list</div>
+        <br>
+        <article>
+            <table width="100%" border="1">
+                <tr>
+                    <td>Full Name</td>
+                    <td>User Name</td>
+                    <td>Age</td>
+                    <td>Email</td>
+                    <td>Address</td>
+                </tr>
+                {{#each staff}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{userName}}</td>
+                        <td>{{age}}</td>
+                        <td>{{email}}</td>
+                        <td>{{address}}</td>
+                        <td><a href="/delete?id={{_id}}">Delete</a></td>
+                        <td><a href="/staff/trainee/edit?id={{_id}}">Edit</a></td>
+                    </tr>
+                {{/each}}
+            </table>
+        </article>
+
+        </div>
+
+    </body>
+
+</html>
