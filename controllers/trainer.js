@@ -39,6 +39,13 @@ router.get('/viewTrainee', async(req, res) => {
     })
     
 })
+router.get('/viewTraineegrade', async(req, res) => {
+    let db = await getDB();
+    let results = await db.collection("traineegrade").find({}).toArray();
+    res.render('trainerViewTraineePassFail', {
+        traineegrade : results
+    })
+})
 
 
 router.get('/', (req, res) => {
