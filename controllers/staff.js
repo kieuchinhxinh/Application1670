@@ -1,6 +1,7 @@
 const express = require('express')
 const {
-    insertObject,getDB
+    insertObject,
+    getDB
 } = require('../databaseHandler')
 const {
     requireStaff
@@ -46,7 +47,7 @@ router.post('/addCourseCategory', async(req, res) => {
         description: description
     }
     await insertObject("coursecategory", newCourseCategory)
-    res.redirect('/staff')
+    res.redirect('staff')
 
 })
 router.get('/addCourse', (req, res) => {
@@ -64,9 +65,10 @@ router.post('/addCourse', async(req, res) => {
 
     }
     await insertObject("course", newCourse)
-    res.redirect('/staff')
+    res.redirect('staff')
 
 })
+
 router.get('/viewTrainee', async(req, res) => {
     let db = await getDB();
     let results = await db.collection("trainee").find({}).toArray();
@@ -74,6 +76,51 @@ router.get('/viewTrainee', async(req, res) => {
         trainee: results
     })
 })
+router.get('/viewCourse', async(req, res) => {
+    let db = await getDB();
+    let results = await db.collection("course").find({}).toArray();
+    res.render('viewCourse', {
+        course: results
+    })
+})
 
+router.get('/viewStaff', async(req, res) => {
+    let db = await getDB();
+    let results = await db.collection("staff").find({}).toArray();
+    res.render('viewStaff', {
+        staff: results
+    })
+})
+router.get('/viewCourseCategory', async(req, res) => {
+    let db = await getDB();
+    let results = await db.collection("coursecategory").find({}).toArray();
+    res.render('viewCourseCategory', {
+        coursecategory: results
+    })
+})
+router.get('/edit', async(req, res) => {
+    let id = req.query.id;
+    let traineeEdit = await trainee.findById(id);
+    console.log(traineeEdit);
+    res.render('edit', {
+        aTrainee: traineeEdit,
+    })
+})
+router.post('/doEditTrainee', async(req, res) => {
+    let id = req.body.id;
+    let aTrainee = await trainee.findById(id);
+    if (req.file) {
+        aTrainee.img = req.file.filename;
+    }
+    aTrainee.dateOfBirth = new Date(req.body.date);
+    aTrainee.education = req.body.education;
+    try {
+        aTrainee = await aTrainee.save();
+        res.redirect('/staff/trainee');
+    } catch (error) {
+        console.log()
+        res.redirect('/staff/trainee');
+    }
 
+})
 module.exports = router;
