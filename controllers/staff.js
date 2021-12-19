@@ -1,6 +1,6 @@
 const express = require('express')
 const {
-    insertObject
+    insertObject,getDB
 } = require('../databaseHandler')
 const {
     requireStaff
@@ -67,4 +67,13 @@ router.post('/addCourse', async(req, res) => {
     res.redirect('/staff')
 
 })
+router.get('/viewTrainee', async(req, res) => {
+    let db = await getDB();
+    let results = await db.collection("trainee").find({}).toArray();
+    res.render('viewTrainee', {
+        trainee: results
+    })
+})
+
+
 module.exports = router;
