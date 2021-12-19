@@ -1,32 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Page</title>
-    <style> .top-nav-index{
-        background-color:  #85467b	;
-       color: rgb(253, 253, 253);
-        font-size: 30px;
-        padding:10px 20px;
-        font-weight: bold;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        margin: auto;}
-    </style>
-</head>
-<body>
-    <div class="top-nav-index"><a>FPT CO.</a></div>
-    <h2>Staff Page</h2>
-     <div class="header">
-    
-        <li><a href="/logout"> Logout </a></li>
-    </div>
-      <div class="function">
-        <li><a href="/staff/addCourseCategory">Create A Course Category</a></li>
-        <li><a href="/staff/addCourse">Create A Course</a></li>
-        <li><a href="/staff/addTrainee">Create A Trainee</a></li>
-        <li><a href="/staff/viewStaff">View Staff Account</a></li>     
-    </div>
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            .top-nav-index {
+                background-color: #1e1263;
+                color: rgb(253, 253, 253);
+                font-size: 30px;
+                padding: 6px 12px;
+                font-weight: bold;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                margin: auto;
+            }
+
+            .w3-bar {
+                color: azure;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="top-nav-index"><a>FPT CO.</a></div>
+
+        <br>
+
+        <div class="w3-bar" style="background-color:#1b0182;float:right;">
+            <a href="index" class="w3-bar-item w3-button">Home</a>
+
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Course Category</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewCourseCategory" class="w3-bar-item w3-button">View All Course Category</a>
+                    <a href="/staff/addCourseCategory" class="w3-bar-item w3-button">Create A Course Category</a>
+                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Course</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewCourse" class="w3-bar-item w3-button">View All Course</a>
+                    <a href="/staff/addCourse" class="w3-bar-item w3-button">Create New Course</a>
+                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Trainee</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewTrainee" class="w3-bar-item w3-button">View All Trainee</a>
+                    <a href="/staff/addTrainee" class="w3-bar-item w3-button">Create New Trainee</a>
+                    <a href="/staff/editTrainee" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Trainer</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="#" class="w3-bar-item w3-button">View All Trainer</a>
+                    <a href="/staff/addTrainee" class="w3-bar-item w3-button">Create New Trainer</a>
+                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Staff</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewStaff" class="w3-bar-item w3-button">View Staff Account</a>
+                    <a href="admin/addStaff" class="w3-bar-item w3-button">Create New Staff</a>
+                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="header">
+
+            <li><a href="/logout"> Logout </a></li>
+        </div>
+        <div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+            <!-- Automatic Slideshow Images -->
+            <div class="mySlides w3-display-container w3-center">
+                <img src="https://greenwich.edu.vn/wp-content/uploads/2021/01/banner-2.jpg" style="width:100%">
+                <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+                    <h3>Los Angeles</h3>
+                    <p><b>We had the best time playing at Venice Beach!</b></p>
+                </div>
+            </div>
+          
+
+    </body>
+
 </html>
