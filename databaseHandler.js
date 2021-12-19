@@ -63,5 +63,5 @@ async function checkUserRole(nameI, passI) {
 
 module.exports = {
     insertObject,
-    checkUserRole
+    checkUserRole,getDB
 }
