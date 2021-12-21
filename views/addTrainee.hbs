@@ -1,100 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <title>New Trainee</title>
-    <style>
-        body{
-            margin-top:20px;
-            background:#c4e2f0;
-        }
-        h2{
-            text-align: center;
-            font-weight: bold;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-        .staff-h{background-color: rgb(52, 36, 39);
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 20px;
-        padding: 5px 8px;
-        color: white;
-        font-weight: bold;
-        border: white;
-        }
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+            id="bootstrap-css"><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            
+            
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <title>New Trainee</title>
+        <style>
+            body {
+     
+                background: #c4e2f0;
+            }
+
+            h2 {
+                text-align: center;
+                font-weight: bold;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            .staff-h {
+                background-color: rgb(52, 36, 39);
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 20px;
+                padding: 5px 8px;
+                color: white;
+                font-weight: bold;
+                border: white;
+            }
+      .top-nav-index {
+                background-color: #05197d;
+                color: rgb(253, 253, 253);
+                font-size: 30px;
+                padding: 6px 12px;
+                font-weight: bold;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                margin: auto;
+            }
+        .ql {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                margin-left: 5px;
+            }
+              .w3-bar {
+                color: azure;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+
+            }
+            b{
+                font-family: 'Times New Roman', Times, serif;
+                background-color: rgba(247, 247, 247, 0.292);
+                float: right;
+            }  
     </style>
-</head>
-<body>
-  <div class="back-staff"><button class="staff-h">BACK TO HOME STAFF</button> </div>
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h2 class="modal-title">Create A Trainee</h2>
+    </head>
+    
+    <body>
+        <div class="top-nav-index">FPT CO.</div>
+        <div class="w3-bar" style="background-color:#000000;float:right;">
+            <a href="index" class="w3-bar-item w3-button">Home</a>
+    
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Course Category</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewCourseCategory" class="w3-bar-item w3-button">View All Course Category</a>
+                    <a href="/staff/addCourseCategory" class="w3-bar-item w3-button">Create A Course Category</a>
+                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Course</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewCourse" class="w3-bar-item w3-button">View All Course</a>
+                    <a href="/staff/addCourse" class="w3-bar-item w3-button">Create New Course</a>
+                    <a href="/staff/editCourse" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Trainee</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewTrainee" class="w3-bar-item w3-button">View All Trainee</a>
+                    <a href="/staff/addTrainee" class="w3-bar-item w3-button">Create New Trainee</a>
+                    <a href="/staff/editTrainee" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Trainer</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="#" class="w3-bar-item w3-button">View All Trainer</a>
+                    <a href="/staff/addTrainer" class="w3-bar-item w3-button">Create New Trainer</a>
+                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Staff</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewStaff" class="w3-bar-item w3-button">View Staff Account</a>
+                    <a href="admin/addStaff" class="w3-bar-item w3-button">Create New Staff</a>
+                    <a href="/staff/profileStaff" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+    
         </div>
-        <div class="modal-body">
-            <div class="py-1">
-            <form class="form" method="POST" action="addTrainee">
-                <div class="row">
-                <div class="col">
-                    <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                        <label>Full Name</label>
-                        <input class="form-control" type="text" name="txtName" placeholder="Full name">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                        <label>Email</label>
-                        <input class="form-control" type="text" placeholder="user@example.com" name="txtEmail">
-                        </div>
-                    </div>
+        <br>
+       <br>
+        <br>
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Create A Trainee</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="py-1">
+                        <form class="form" method="POST" action="addTrainee">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Full Name</label>
+                                                <input class="form-control" type="text" name="txtName"
+                                                    placeholder="Full name">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input class="form-control" type="text" placeholder="user@example.com"
+                                                    name="txtEmail">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Username</label>
+                                                <input class="form-control" type="text" name="txtUserName"
+                                                    placeholder="userName">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Education</label>
+                                                <input class="form-control" type="text" placeholder="Education"
+                                                    name="txtEducation">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Date Of Birth</label>
+                                                <input class="form-control" type="text" name="txtDate"
+                                                    placeholder="Date Of Birth">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col d-flex justify-content-end">
+                                <input type="submit" value="Add Trainee">
+                            </div>
+
+
                     </div>
 
-         <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                        <label>Username</label>
-                        <input class="form-control" type="text" name="txtUserName" placeholder="userName">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                        <label>Education</label>
-                        <input class="form-control" type="text" placeholder="Education" name="txtEducation">
-                        </div>
-                    </div>
-                    </div>
-            <div class="row">
-                <div class="col">
-                        <div class="form-group">
-                        <label>Date Of Birth</label>
-                        <input class="form-control" type="text" name="txtDate" placeholder="Date Of Birth">
-                        </div>
-                        </div>
-                          </div></div>
-                    </div> 
-                        <div class="col d-flex justify-content-end">
-                        <input type="submit" value="Add Trainee"></div>
-                 
-                
+
+
                 </div>
-              
-               
-                    
-                </div>
-                </div>
+            </div>
             </form>
 
-            </div>
         </div>
         </div>
-    </div>
-    </div>
-</body>
+        </div>
+        </div>
+        </div>
+    </body>
+
 </html>
