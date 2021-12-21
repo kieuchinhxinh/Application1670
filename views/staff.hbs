@@ -11,9 +11,33 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <style>
+        <style>a{color:white;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;}
+        .global-footer {
+            list-style-type: none;
+            overflow: hidden;
+            background-color: rgb(27, 26, 26);
+            margin-top: 60px;
+            bottom: 0;
+            width: 100%;
+        }
+    
+        h6 {
+            color: rgb(21, 0, 255);
+            margin-left: 100px;
+            font-weight:bold;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+        }
+    
+        strong {
+            font-size: 15px;
+            margin-left: 15px;
+    
+        }
             .top-nav-index {
-                background-color: #1e1263;
+                background-color: #05197d;
                 color: rgb(253, 253, 253);
                 font-size: 30px;
                 padding: 6px 12px;
@@ -27,16 +51,46 @@
                 font-family: Georgia, 'Times New Roman', Times, serif;
 
             }
+            b{
+                font-family: 'Times New Roman', Times, serif;
+                background-color: rgba(247, 247, 247, 0.292);
+                float: right;
+            }  
+            form .as {
+        border-radius: 16px;
+        border: 0.25px solid rgb(19, 46, 224);
+        padding: 16px; 
+        width: 200px;
+        height: 1px;  
+
+    }form{
+    text-align: center;
+    height: 25px;
+   }
+   form .chinh{
+        display: inline-block;
+        padding: 6px 8px;
+        font-size: 13.5px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: rgb(3, 21, 142);
+        background-color: #e0e0e0;
+        border: none;
+        border-radius: 13px;
+        box-shadow: 0 1px #999;
+      }
         </style>
 
     </head>
 
     <body>
-        <div class="top-nav-index"><a>FPT CO.</a></div>
+        <div class="top-nav-index">FPT CO.</div>
 
-        <br>
+    
 
-        <div class="w3-bar" style="background-color:#1b0182;float:right;">
+        <div class="w3-bar" style="background-color:#000000;float:right;">
             <a href="index" class="w3-bar-item w3-button">Home</a>
 
             <div class="w3-dropdown-hover">
@@ -52,7 +106,7 @@
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="/staff/viewCourse" class="w3-bar-item w3-button">View All Course</a>
                     <a href="/staff/addCourse" class="w3-bar-item w3-button">Create New Course</a>
-                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+                    <a href="/staff/editCourse" class="w3-bar-item w3-button">Edit/Update</a>
                 </div>
             </div>
             <div class="w3-dropdown-hover">
@@ -67,7 +121,7 @@
                 <button class="w3-button">Trainer</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="#" class="w3-bar-item w3-button">View All Trainer</a>
-                    <a href="/staff/addTrainee" class="w3-bar-item w3-button">Create New Trainer</a>
+                    <a href="/staff/addTrainer" class="w3-bar-item w3-button">Create New Trainer</a>
                     <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
                 </div>
             </div>
@@ -76,27 +130,88 @@
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="/staff/viewStaff" class="w3-bar-item w3-button">View Staff Account</a>
                     <a href="admin/addStaff" class="w3-bar-item w3-button">Create New Staff</a>
-                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+                    <a href="/staff/profileStaff" class="w3-bar-item w3-button">Edit/Update</a>
                 </div>
             </div>
 
         </div>
-        <div class="header">
-
-            <li><a href="/logout"> Logout </a></li>
-        </div>
-        <div class="w3-content" style="max-width:2000px;margin-top:46px">
+        <br> 
+        <br>
+      
+    <form action="/search" method="post" style="margin-left: 80%;">
+        <input class="as" type="text" name="txtName" placeholder="|"> <input class="chinh" type="submit" value="Search" href="/staff/searchCourse">
+    </form>
+   
+        <div class="w3-content" style="max-width:2000px;margin-top:22px">
 
             <!-- Automatic Slideshow Images -->
             <div class="mySlides w3-display-container w3-center">
-                <img src="https://greenwich.edu.vn/wp-content/uploads/2021/01/banner-2.jpg" style="width:100%">
+                <img src="https://cms.greenwich.edu.vn/pluginfile.php/1/theme_adaptable/p1/1627617472/socialbg.png" style="width:100%;height:680px;">
                 <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-                    <h3>Los Angeles</h3>
-                    <p><b>We had the best time playing at Venice Beach!</b></p>
+              
+                    <p><b>"Wisdom is not a product from school, but a lifelong learning process." - Trí tuệ không phải là một sản phẩm từ trường
+                    học, mà là một quá trình học tập suốt đời.
+</b></p>
                 </div>
             </div>
-          
-
+       
+        <div class="global-footer">
+            <div class="region region-global-footer row">
+                <div id="block-menu-menu-global-footer-with-logo" class="block block-menu  col-md-6 col-lg-3 py-4">
+        
+                    <div class="content-footer">
+                        <h6> © 2021 FPT CO.</h6>
+                        <ul class="menu" style="margin-left: 60px;">
+                            <li><a href="/" title="">Contact the University</a></li>
+                            <li><a href="/" title="">Accessibility</a></li>
+                            <li><a href="/" title="">Freedom of information</a></li>
+                            <li><a href="/" title="">Privacy policy & cookies</a></li>
+                            <li><a href="/" title="">Terms and conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="block-menu-menu-global-footer-study-at-camb" class="block block-menu  col-md-6 col-lg-3 py-4">
+                    <div class="content-footer">
+                        <h6>Study at FPT CO.</h6>
+                        <ul class="menu" style="margin-left: 60px;">
+                            <li><a href="/" title="">Undergraduate</a></li>
+                            <li><a href="/" title="">Postgraduate</a></li>
+                            <li><a href="/" title="">Continuing education</a></li>
+                            <li><a href="/" title="">Professional education</a></li>
+                            <li><a href="/" title="">Courses in education</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="block-menu-menu-global-footer-about-uni" class="block block-menu  col-md-6 col-lg-3 py-4">
+        
+        
+                    <div class="content-footer">
+                        <h6>About the University</h6>
+                        <ul class="menu" style="margin-left: 60px;">
+                            <li><a href="/" title="">How the University work</a></li>
+                            <li><a href="/" title="">Give to FPT CO.</a></li>
+                            <li><a href="/" title="">Jobs</a></li>
+                            <li><a href="/" title="">Maps</a></li>
+                            <li><a href="/" title="">Visiting the University</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="block-menu-menu-global-footer-research" class="block block-menu  col-md-6 col-lg-3 py-4">
+        
+        
+                    <div class="content-footer">
+                        <h6>Research at FPT CO.</h6>
+                        <ul class="menu" style="margin-left: 60px;">
+                            <li><a href="/" title="">Research news</a></li>
+                            <li><a href="/" title="">About research at FPT CO.</a></li>
+                            <li><a href="/" title="">Public engagement</a></li>
+                            <li><a href="/" title="">FPT CO A-Z</a></li>
+                            <li><a href="/" title="">Spotlight on...</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 
 </html>
