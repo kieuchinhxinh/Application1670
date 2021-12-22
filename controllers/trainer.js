@@ -30,7 +30,7 @@ router.get('/trainerProfileUpdate',(req,res)=>{
     res.render('trainerProfileUpdate')
 })
 //------------------
-
+//view
 router.get('/viewTrainee', async(req, res) => {
     let db = await getDB();
     let results = await db.collection("trainee").find({}).toArray();
@@ -46,6 +46,10 @@ router.get('/viewTraineegrade', async(req, res) => {
         traineegrade : results
     })
 })
+//-----------------
+
+
+
 
 
 router.get('/', (req, res) => {
