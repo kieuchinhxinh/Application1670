@@ -4,7 +4,7 @@ const {
     getDB,
     deleteTrainee,
     deleteCategory,
-    deleteCourse
+    deleteCourse,ObjectId
 } = require('../databaseHandler')
 const {
     requireStaff
@@ -117,5 +117,17 @@ router.get('/delete_trainee', async(req, res) => {
     const us = req.query.userName;
     await deleteTrainee(us);
     res.redirect('viewTrainee')
+})
+router.get('/editTrainee', async(req, res) => {
+    const id = req.query.id;
+
+    const db = await getDB();
+    const e = await db.collection("trainee").findOne({
+        _id: ObjectId(id)
+    });
+
+    res.render('staffEditTrainee', {
+        trainee: e
+    });
 })
 module.exports = router;
