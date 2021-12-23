@@ -147,10 +147,10 @@
                         <td style="font-weight: bold;">{{coursecategoryName}}</td>
                         <td style="width: 68%;">{{description}}</td>
 
-                        <td style="width: 6%; color:rgb(51, 0, 255)"><a  style="width: 6%;color:rgb(51, 0, 255)" 
-                                href="/coursecategory/delete?id={{_id}}">Delete</a></td>
+                        <td style="width:6%"><a id="delete" href="/staff/delete_category?coursecategoryName={{coursecategoryName}}"
+                                style="width: 6%; color:rgb(51, 0, 255)">Delete</a></td>
                         <td style="width: 6%;color:rgb(51, 0, 255)"><a  style="width: 6%;color:rgb(51, 0, 255)"
-                                href="/staff/coursecategory/edit?id={{_id}}">Edit</a></td>
+                                href="/editCourse?id={{_id}}">Edit</a></td>
                     </tr>
                 {{/each}}
             </table>
