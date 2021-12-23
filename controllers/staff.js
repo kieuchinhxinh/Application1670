@@ -113,4 +113,9 @@ router.get('/delete_course', async(req, res) => {
     await deleteCourse(cn);
     res.redirect('viewCourse')
 })
+router.get('/delete_trainee', async(req, res) => {
+    const us = req.query.userName;
+    await deleteTrainee(us);
+    res.redirect('viewTrainee')
+})
 module.exports = router;
