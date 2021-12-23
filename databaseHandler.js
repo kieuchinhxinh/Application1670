@@ -92,6 +92,16 @@ async function deleteCourse(coursename) {
         courseName: coursename
     });
 }
+async function deleteStaff(username) {
+    const dbo = await getDB();
+    await dbo.collection("staff").deleteOne({
+        name: username
+    });
+    await dbo.collection("Users").deleteOne({
+        userName: username
+    });
+
+}
 module.exports = {
     insertObject,
     checkUserRole,
@@ -105,5 +115,5 @@ module.exports = {
     getAllCourse,
     getCourseById,
     deleteTrainee,
-    deleteCategory
+    deleteCategory,deleteStaff
 }
