@@ -102,6 +102,14 @@ async function deleteStaff(username) {
     });
 
 }
+async function GetIDStaff(id) {
+    const db = await getDB();
+    const e = await db.collection("staff").findOne({
+        _id: ObjectId(id)
+    })
+    return e;
+}
+
 module.exports = {
     insertObject,
     checkUserRole,
@@ -115,5 +123,5 @@ module.exports = {
     getAllCourse,
     getCourseById,
     deleteTrainee,
-    deleteCategory,deleteStaff
+    deleteCategory,deleteStaff,objectId
 }
