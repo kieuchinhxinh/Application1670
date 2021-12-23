@@ -1,6 +1,8 @@
 const express = require('express')
 const {
-    insertObject,deleteStaff
+    insertObject,
+    deleteStaff,
+    getDB
 } = require('../databaseHandler')
 const {
     requireAdmin
@@ -76,6 +78,14 @@ router.post('/addStaff', async(req, res) => {
     res.redirect('/admin')
 
 })
+router.get('/viewStaff', async(req, res) => {
+    let db = await getDB();
+    let results = await db.collection("staff").find({}).toArray();
+    res.render('viewStaff', {
+        staff: results
+    })
+})
+
 router.get('/addStaff', (req, res) => {
     res.render('addStaff')
 })
