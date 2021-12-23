@@ -1,6 +1,6 @@
 const express = require('express')
 const {
-    insertObject
+    insertObject,deleteStaff
 } = require('../databaseHandler')
 const {
     requireAdmin
@@ -78,5 +78,10 @@ router.post('/addStaff', async(req, res) => {
 })
 router.get('/addStaff', (req, res) => {
     res.render('addStaff')
+})
+router.get('/delete_staff', async(req, res) => {
+    const us = req.query.userName;
+    await deleteStaff(us);
+    res.redirect('viewStaff')
 })
 module.exports = router;
