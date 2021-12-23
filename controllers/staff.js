@@ -108,4 +108,9 @@ router.get('/delete_category', async(req, res) => {
     res.redirect('viewCourseCategory')
 })
 
+router.get('/delete_course', async(req, res) => {
+    const cn = req.query.courseName;
+    await deleteCourse(cn);
+    res.redirect('viewCourse')
+})
 module.exports = router;
