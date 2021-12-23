@@ -100,6 +100,14 @@ router.get('/viewCourseCategory', async(req, res) => {
     })
 })
 
+router.get('/viewTrainer', async(req, res) => {
+    let db = await getDB();
+    let results = await db.collection("trainer").find({}).toArray();
+    res.render('viewTrainer', {
+        trainer: results
+    })
+})
+
 
 
 router.get('/delete_category', async(req, res) => {
