@@ -162,8 +162,8 @@
                         <td>{{dateofbirth}}</td>
                         <td>{{email}}</td>
                         <td>{{education}}</td>
-                      <td style="width:6%" ><a href="/coursecategory/delete?id={{_id}}" style="width: 6%; color:rgb(51, 0, 255)">Delete</a></td>
-                      <td style="width:6%" ><a href="/staff/coursecategory/edit?id={{_id}}" style="width: 6%;color:rgb(51, 0, 255)">Edit</a></td>
+                      <td style="width:6%" ><a id="delete" href="/staff/delete_trainee?userName={{name}}"style="width: 6%; color:rgb(51, 0, 255)">Delete</a></td>
+                      <td style="width:6%" ><a href="/edit?id={{_id}}" style="width: 6%;color:rgb(51, 0, 255)">Edit</a></td>
                     </tr>
                 {{/each}}
         </table>
