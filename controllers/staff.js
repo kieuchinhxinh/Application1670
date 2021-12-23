@@ -1,7 +1,10 @@
 const express = require('express')
 const {
     insertObject,
-    getDB
+    getDB,
+    deleteTrainee,
+    deleteCategory,
+    deleteCourse
 } = require('../databaseHandler')
 const {
     requireStaff
@@ -10,9 +13,7 @@ const router = express.Router()
 router.get('/', (req, res) => {
     res.render('staff')
 })
-router.get('/', (req, res) => {
-    res.render('/staff')
-})
+
 router.get('/addTrainee', (req, res) => {
         res.render('addTrainee')
     })
@@ -32,7 +33,7 @@ router.post('/addTrainee', (req, res) => {
         dateofbirth: dateofbirth
     }
     insertObject("trainee", newTrainee)
-    res.render('staff')
+    res.render('/staff')
 })
 
 
@@ -47,7 +48,7 @@ router.post('/addCourseCategory', async(req, res) => {
         description: description
     }
     await insertObject("coursecategory", newCourseCategory)
-    res.redirect('staff')
+    res.redirect('/staff')
 
 })
 router.get('/addCourse', (req, res) => {
@@ -55,17 +56,17 @@ router.get('/addCourse', (req, res) => {
 })
 router.post('/addCourse', async(req, res) => {
     const name = req.body.txtName
-    const description = req.body.txtDescription
+    const courseId = req.body.txtCourseId
     const trainerId = req.body.txtTrainerId
 
     const newCourse = {
         courseName: name,
-        description: description,
+        courseId: courseId,
         trainerId: trainerId,
 
     }
     await insertObject("course", newCourse)
-    res.redirect('staff')
+    res.redirect('/staff')
 
 })
 
@@ -98,29 +99,13 @@ router.get('/viewCourseCategory', async(req, res) => {
         coursecategory: results
     })
 })
-router.get('/edit', async(req, res) => {
-    let id = req.query.id;
-    let traineeEdit = await trainee.findById(id);
-    console.log(traineeEdit);
-    res.render('edit', {
-        aTrainee: traineeEdit,
-    })
-})
-router.post('/doEditTrainee', async(req, res) => {
-    let id = req.body.id;
-    let aTrainee = await trainee.findById(id);
-    if (req.file) {
-        aTrainee.img = req.file.filename;
-    }
-    aTrainee.dateOfBirth = new Date(req.body.date);
-    aTrainee.education = req.body.education;
-    try {
-        aTrainee = await aTrainee.save();
-        res.redirect('/staff/trainee');
-    } catch (error) {
-        console.log()
-        res.redirect('/staff/trainee');
-    }
 
+
+
+router.get('/delete_category', async(req, res) => {
+    const ccn = req.query.coursecategoryName;
+    await deleteCategory(ccn);
+    res.redirect('viewCourseCategory')
 })
+
 module.exports = router;
