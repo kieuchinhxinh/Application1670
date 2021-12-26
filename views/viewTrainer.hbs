@@ -5,18 +5,13 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Page</title>
+        <title> View All Trainer</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <title>Index Page</title>
+
         <style>
             a {
                 color: white;
@@ -28,13 +23,13 @@
                 list-style-type: none;
                 overflow: hidden;
                 background-color: rgb(27, 26, 26);
-                margin-top: 350px;
+                margin-top: 260px;
                 bottom: 0;
                 width: 100%;
             }
 
             h6 {
-                color: rgb(21, 0, 255);
+                color: rgb(255, 94, 0);
                 margin-left: 100px;
                 font-weight: bold;
                 font-family: 'Times New Roman', Times, serif;
@@ -53,21 +48,24 @@
 
             table {
                 font-family: 'Times New Roman', Times, serif;
-                border-collapse: collapse;
-                width: 80%;
+                width: 85%;
                 margin: auto;
                 height: auto;
-                padding: 20px;
-                border: 0.25px rgb(187, 194, 194);
-
+                padding: 10px;
+                border: 0.25px solid #9d9d9d;
 
             }
 
-
+            tr,
+            td {
+                border: 0.25px solid #e7e4e4;
+                text-align: center;
+                padding: 10px;
+            }
 
             tr,
             td {
-                border: 0.25px solid #bfc6d3;
+                border: 0.25px solid #c4c4c4;
                 text-align: center;
                 padding: 10px;
             }
@@ -77,6 +75,7 @@
             }
 
 
+          
             .top-nav {
                 background-color: #05197d;
                 color: rgb(253, 253, 253);
@@ -91,21 +90,7 @@
                 margin-left: 5px;
             }
 
-            .top-nav-index {
-                background-color: #05197d;
-                color: rgb(253, 253, 253);
-                font-size: 30px;
-                padding: 6px 12px;
-                font-weight: bold;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                margin: auto;
-            }
-
-            .ql {
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                margin-left: 5px;
-            }
-
+         
             .w3-bar {
                 color: azure;
                 font-family: Georgia, 'Times New Roman', Times, serif;
@@ -125,8 +110,8 @@
             <div class="top-nav">FPT CO.</div>
         </header>
 
-        <div class="w3-bar" style="background-color:#000000;float:right;">
-            <a href="index" class="w3-bar-item w3-button">Home</a>
+    <div class="w3-bar" style="background-color:#e95c0a;float:right;">
+        <a href="/staff/staff" class="w3-bar-item w3-button">Home</a>
 
             <div class="w3-dropdown-hover">
                 <button class="w3-button">Course Category</button>
@@ -165,7 +150,7 @@
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="/staff/viewStaff" class="w3-bar-item w3-button">View Staff Account</a>
                     <a href="admin/addStaff" class="w3-bar-item w3-button">Create New Staff</a>
-                    <a href="/staff/profileStaff" class="w3-bar-item w3-button">Edit/Update</a>
+                    <a href="/staff/staffProfile" class="w3-bar-item w3-button">Profile</a>
                 </div>
             </div>
 
@@ -195,7 +180,7 @@
                         <td>{{specialty}}</td>
                         <td>{{phone}}</td>
                         
-                        <td style="width:6%"><a id="delete" href="/admin/delete_staff?userName={{name}}"
+                        <td style="width:6%"><a id="delete" href="/admin/delete_trainer?userName={{name}}"
                                 style="width: 6%; color:rgb(51, 0, 255)">Delete</a></td>
                         <td style="width:6%"><a href="/staff/edit?id={{_id}}"
                                 style="width: 6%;color:rgb(51, 0, 255)">Edit</a>
