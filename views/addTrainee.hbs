@@ -1,79 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
-            id="bootstrap-css"><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            
-            
-            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <title>New Trainee</title>
-        <style>
-            body {
-     
-                background: #c4e2f0;
-            }
-
-            h2 {
-                text-align: center;
-                font-weight: bold;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            }
-
-            .staff-h {
-                background-color: rgb(52, 36, 39);
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                font-size: 20px;
-                padding: 5px 8px;
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> View All Course Category</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>     
+            a {
                 color: white;
-                font-weight: bold;
-                border: white;
+                font-size: 14px;
+                font-family: 'Times New Roman', Times, serif;
             }
-      .top-nav-index {
-                background-color: #05197d;
+            .global-footer {
+                list-style-type: none;
+                overflow: hidden;
+                background-color: rgb(27, 26, 26);
+                margin-top: 260px;
+                bottom: 0;
+                width: 100%;
+            }
+          h6 {
+                color: rgb(255, 94, 0);
+                margin-left: 100px;
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 18px;
+            }
+            strong {
+                font-size: 15px;
+                margin-left: 15px;
+            }
+      
+            .top-nav {
+                background-color: #2c3563;
                 color: rgb(253, 253, 253);
                 font-size: 30px;
                 padding: 6px 12px;
                 font-weight: bold;
                 font-family: Georgia, 'Times New Roman', Times, serif;
-                margin: auto;
             }
-        .ql {
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                margin-left: 5px;
-            }
-              .w3-bar {
-                color: azure;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-
-            }
-            b{
+            .w3-bar {
+                color: white;
                 font-family: 'Times New Roman', Times, serif;
-                background-color: rgba(247, 247, 247, 0.292);
-                float: right;
-            }  
-    </style>
+            }
+        </style>
     </head>
-    
+
     <body>
-        <div class="top-nav-index">FPT CO.</div>
-        <div class="w3-bar" style="background-color:#000000;float:right;">
-            <a href="index" class="w3-bar-item w3-button">Home</a>
-    
-            <div class="w3-dropdown-hover">
-                <button class="w3-button">Course Category</button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="/staff/viewCourseCategory" class="w3-bar-item w3-button">View All Course Category</a>
-                    <a href="/staff/addCourseCategory" class="w3-bar-item w3-button">Create A Course Category</a>
+        <header> <div class="top-nav">FPT CO.</div></header>
+        <div class="w3-bar" style="background-color:#e95c0a;float:right;">
+        <a href="/staff/staff" class="w3-bar-item w3-button">Home</a>
+        <div class="w3-dropdown-hover">
+        <button class="w3-button">Course Category</button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="/staff/viewCourseCategory" class="w3-bar-item w3-button">View All Course Category</a>
+        <a href="/staff/addCourseCategory" class="w3-bar-item w3-button">Create A Course Category</a>
                     <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
                 </div>
             </div>
@@ -96,7 +81,7 @@
             <div class="w3-dropdown-hover">
                 <button class="w3-button">Trainer</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="#" class="w3-bar-item w3-button">View All Trainer</a>
+                    <a href="/staff/viewTrainer" class="w3-bar-item w3-button">View All Trainer</a>
                     <a href="/staff/addTrainer" class="w3-bar-item w3-button">Create New Trainer</a>
                     <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
                 </div>
@@ -106,38 +91,35 @@
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="/staff/viewStaff" class="w3-bar-item w3-button">View Staff Account</a>
                     <a href="admin/addStaff" class="w3-bar-item w3-button">Create New Staff</a>
-                    <a href="/staff/profileStaff" class="w3-bar-item w3-button">Edit/Update</a>
+                    <a href="/staff/staffProfile" class="w3-bar-item w3-button">Profile</a>
                 </div>
             </div>
-    
         </div>
         <br>
-       <br>
+        <br>
+    
         <br>
         <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title">Create A Trainee</h2>
-                </div>
-                <div class="modal-body">
-                    <div class="py-1">
-                        <form class="form" method="POST" action="addTrainee">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label>Full Name</label>
-                                                <input class="form-control" type="text" name="txtName"
-                                                    placeholder="Full name">
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label>Email</label>
-                                                <input class="form-control" type="text" placeholder="user@example.com"
-                                                    name="txtEmail">
-                                            </div>
+        <div class="modal-content">
+        <div class="modal-header">
+        <h2 class="modal-title">Create A Trainee</h2>
+        </div>
+        <div class="modal-body">
+        <div class="py-1">
+        <form class="form" method="POST" action="addTrainee" style="font-family:'Times New Roman', Times, serif;">
+        <div class="row">
+         <div class="col">
+        <div class="row">
+        <div class="col">
+    <div class="form-group">
+        <label>Full Name</label>
+                    <input class="form-control" type="text" name="txtName" placeholder="Full name">
+                </div> </div>
+<div class="col">
+<div class="form-group">
+<label>Email</label>
+<input class="form-control" type="text" placeholder="user@example.com"name="txtEmail">
+</div>
                                         </div>
                                     </div>
 
