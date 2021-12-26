@@ -1,74 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Page</title>
+        <title> View All Course Category</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style>
-          a{color:white;
-    font-size: 14px;
-    font-family: 'Times New Roman', Times, serif;}
-        .global-footer {
-            list-style-type: none;
-            overflow: hidden;
-            background-color: rgb(27, 26, 26);
-            margin-top: 350px;
-            bottom: 0;
-            width: 100%;
-        }
-    
-        h6 {
-            color: rgb(21, 0, 255);
-            margin-left: 100px;
-            font-weight:bold;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 18px;
-        }
-    
-        strong {
-            font-size: 15px;
-            margin-left: 15px;
-    
-        }
-      table {
-                font-family:  'Times New Roman', Times, serif;
-
-                width: 85%;
+            a {
+                color: white;
+                font-size: 14px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            .global-footer {
+                list-style-type: none;
+                overflow: hidden;
+                background-color: rgb(27, 26, 26);
+                margin-top: 260px;
+                bottom: 0;
+                width: 100%;
+            }
+            h6 {
+                color: rgb(255, 94, 0);
+                margin-left: 100px;
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 18px;
+            }
+            strong {
+                font-size: 15px;
+                margin-left: 15px;
+            }
+            table {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                border-collapse: collapse;
+                width: 80%;
                 margin: auto;
                 height: auto;
-                padding: 10px;
-                border: 0.25px solid #9d9d9d;
-
-
-            }
-
-
-            tr,
-            td {
-                border: 1px solid #e7e4e4;
-                text-align: center;
-                padding: 10px;
+                padding: 20px;
+                border: 0.25px rgb(187, 194, 194);
 
             }
-
-            tr,
-            td {
-                border: 0.25px solid #c4c4c4;
+            tr,td {
+                border: 0.25px solid #99a0ae;
                 text-align: center;
                 padding: 10px;
             }
-
             tr:nth-child(even) {
                 background-color: #ffffff;
             }
-
+            tr:nth-child(even) {
+                background-color: #ffffff;
+            }
             .top-nav {
                 background-color: #2c3563;
                 color: rgb(253, 253, 253);
@@ -81,56 +67,46 @@
             color: white;   font-family: Georgia, 'Times New Roman', Times, serif;
         }
         </style>
-    </head>
-
-    <body>
-        <header>
-            <div class="top-nav">FPT CO.</div>
-        </header><div class="w3-bar" style="background-color:#000000;float:right;">
-            <a href="index" class="w3-bar-item w3-button">Home</a>
-        
-            <div class="w3-dropdown-hover">
-                <button class="w3-button">Course Category</button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="/staff/viewCourseCategory" class="w3-bar-item w3-button">View All Course Category</a>
-                    <a href="/staff/addCourseCategory" class="w3-bar-item w3-button">Create A Course Category</a>
-                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button">Course</button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="/staff/viewCourse" class="w3-bar-item w3-button">View All Course</a>
-                    <a href="/staff/addCourse" class="w3-bar-item w3-button">Create New Course</a>
-                    <a href="/staff/editCourse" class="w3-bar-item w3-button">Edit/Update</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button">Trainee</button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="/staff/viewTrainee" class="w3-bar-item w3-button">View All Trainee</a>
-                    <a href="/staff/addTrainee" class="w3-bar-item w3-button">Create New Trainee</a>
-                    <a href="/staff/editTrainee" class="w3-bar-item w3-button">Edit/Update</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button">Trainer</button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                      <a href="/staff/viewTrainer" class="w3-bar-item w3-button">View All Trainer</a>
-                    <a href="/staff/addTrainer" class="w3-bar-item w3-button">Create New Trainer</a>
-                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button">Staff</button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="/staff/viewStaff" class="w3-bar-item w3-button">View Staff Account</a>
-                    <a href="admin/addStaff" class="w3-bar-item w3-button">Create New Staff</a>
-                    <a href="/staff/profileStaff" class="w3-bar-item w3-button">Edit/Update</a>
-                </div>
-            </div>
-        
-        </div>
+    </head>    
+<body>
+    <header><div class="top-nav">FPT CO.</div></header>
+    <div class="w3-bar" style="background-color:#e95c0a;float:right;">
+    <a href="/staff/staff" class="w3-bar-item w3-button">Home</a>
+    <div class="w3-dropdown-hover">
+    <button class="w3-button">Course Category</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+    <a href="/staff/viewCourseCategory" class="w3-bar-item w3-button">View All Course Category</a>
+    <a href="/staff/addCourseCategory" class="w3-bar-item w3-button">Create A Course Category</a>
+    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+    </div></div>
+    <div class="w3-dropdown-hover">
+    <button class="w3-button">Course</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+    <a href="/staff/viewCourse" class="w3-bar-item w3-button">View All Course</a>
+    <a href="/staff/addCourse" class="w3-bar-item w3-button">Create New Course</a>
+    <a href="/staff/editCourse" class="w3-bar-item w3-button">Edit/Update</a>
+    </div></div>
+    <div class="w3-dropdown-hover">
+    <button class="w3-button">Trainee</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+    <a href="/staff/viewTrainee" class="w3-bar-item w3-button">View All Trainee</a>
+    <a href="/staff/addTrainee" class="w3-bar-item w3-button">Create New Trainee</a>
+    <a href="/staff/editTrainee" class="w3-bar-item w3-button">Edit/Update</a>
+    </div></div>
+    <div class="w3-dropdown-hover">
+    <button class="w3-button">Trainer</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+    <a href="/staff/viewTrainer" class="w3-bar-item w3-button">View All Trainer</a>
+    <a href="/staff/addTrainer" class="w3-bar-item w3-button">Create New Trainer</a>
+    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+    </div></div>
+    <div class="w3-dropdown-hover">
+    <button class="w3-button">Staff</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+    <a href="/staff/viewStaff" class="w3-bar-item w3-button">View Staff Account</a>
+    <a href="admin/addStaff" class="w3-bar-item w3-button">Create New Staff</a>
+    <a href="/staff/staffProfile" class="w3-bar-item w3-button">Profile</a>
+    </div> </div></div>
         <br>
         <br>
         <br>
@@ -160,7 +136,6 @@
 <div class="global-footer">
     <div class="region region-global-footer row">
         <div id="block-menu-menu-global-footer-with-logo" class="block block-menu  col-md-6 col-lg-3 py-4">
-
             <div class="content-footer">
                 <h6> © 2021 FPT CO.</h6>
                 <ul class="menu" style="margin-left: 60px;">
@@ -170,10 +145,9 @@
                     <li><a href="/" title="">Privacy policy & cookies</a></li>
                     <li><a href="/" title="">Terms and conditions</a></li>
                 </ul>
-            </div>
-        </div>
+            </div></div>
         <div id="block-menu-menu-global-footer-study-at-camb" class="block block-menu  col-md-6 col-lg-3 py-4">
-            <div class="content-footer">
+        <div class="content-footer">
                 <h6>Study at FPT CO.</h6>
                 <ul class="menu" style="margin-left: 60px;">
                     <li><a href="/" title="">Undergraduate</a></li>
@@ -182,11 +156,8 @@
                     <li><a href="/" title="">Professional education</a></li>
                     <li><a href="/" title="">Courses in education</a></li>
                 </ul>
-            </div>
-        </div>
+            </div></div>
         <div id="block-menu-menu-global-footer-about-uni" class="block block-menu  col-md-6 col-lg-3 py-4">
-
-
             <div class="content-footer">
                 <h6>About the University</h6>
                 <ul class="menu" style="margin-left: 60px;">
@@ -196,11 +167,8 @@
                     <li><a href="/" title="">Maps</a></li>
                     <li><a href="/" title="">Visiting the University</a></li>
                 </ul>
-            </div>
-        </div>
+            </div></div>
         <div id="block-menu-menu-global-footer-research" class="block block-menu  col-md-6 col-lg-3 py-4">
-
-
             <div class="content-footer">
                 <h6>Research at FPT CO.</h6>
                 <ul class="menu" style="margin-left: 60px;">
@@ -210,11 +178,7 @@
                     <li><a href="/" title="">FPT CO A-Z</a></li>
                     <li><a href="/" title="">Spotlight on...</a></li>
                 </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
+            </div></div> </div></div>
     </body>
 
 </html>
