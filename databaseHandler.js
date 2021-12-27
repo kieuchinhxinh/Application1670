@@ -144,16 +144,12 @@ module.exports = {
     getAllTrainees,
     deleteCourse,
     getAllCourse,
-
     deleteTrainee,
-<<<<<<< Updated upstream
     deleteCategory,
     deleteStaff,
     UpdateStaff,
-    UpdateTrainee,
-    ObjectId,
+    UpdateTrainee,ObjectId,
     UpdateCourse,
-=======
     deleteCategory,deleteStaff
->>>>>>> Stashed changes
+
 }

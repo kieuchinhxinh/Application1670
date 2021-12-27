@@ -44,7 +44,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="mystyle.css">
     </link>
-    <title>Add Trainer to manage course</title>
+    <title>Trainer mark</title>
 </head>
 
 <body>
@@ -53,30 +53,28 @@
             <a href="/" class="navbar-brand d-flex align-items-center">
                 <strong>FPT Software</strong>
             </a>
-            <a class="account_image" href="profile"><img src="images/account.png" alt="account icon" width="30px"
-                    height="30px"> {{dataInfo.role}} - {{dataInfo.userName}} </a>
             <a class="btn btn-light" href="/logout">Logout</a>
         </div>
     </div>
     <center>
         <div class="staff_menu">
-            <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <nav class="navbar navbar-light" style="background-color: hsl(216, 11%, 91%);">
                 <ul>
-                    <li class="menubar"><a href="/staffIndex"><strong>Home</strong></a></li>
-                    <li class="menubar"><a href="/staff/staffcourse"><strong>Course</strong></a></li>
-                    <li class="menubar"><a href="/profile"><strong>Profile</strong></a></li>
+                    <li class="menubar"><a href="/trainer"><strong>Home</strong></a></li>
                 </ul>
             </nav>
         </div>
         <hr>
-        <h1>Enter correctly information</h1>
-        <form method="post" action="assignTrainerCourse">
-            Trainee's ID: <input type="text" name="txtTraineeId" id="">
+        <h1>Enter Grade</h1>
+        <form method="post" action="/trainer/MarkTrainee">
+            Trainee : <input type="text" name="txtName" id="txtName" size="30">
             <br><br>
             <input type="hidden" name="txtRole" id="" value="Trainer">
-            Course's ID: <input type="text" name="txtCourseId" id="">
+            Grade: 
+            <input type="text" name="txtGrade" id="txtGrade"
+                size="30">
             <br><br>
-            <input class="btn btn-success" type="submit" value="Submit">
+            <input class="btn btn-success" type="submit" value="Done">
         </form>
     </center>
 </body>

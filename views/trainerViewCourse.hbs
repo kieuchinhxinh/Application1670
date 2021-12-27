@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> View All Course</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            a {
+                color: white;
+                font-size: 14px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+         
+            table {
+                font-family: 'Times New Roman', Times, serif;
+                width: 85%;
+                margin: auto;
+                height: auto;
+                padding: 10px;
+                border: 0.25px solid #9d9d9d;
+            }
+
+            tr,
+            td {
+                border: 0.25px solid #e7e4e4;
+                text-align: center;
+                padding: 10px;
+            }
+
+            tr,
+            td {
+                border: 0.25px solid #c4c4c4;
+                text-align: center;
+                padding: 10px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #ffffff;
+            }
+
+            .top-nav {
+                background-color: #05197d;
+                color: rgb(253, 253, 253);
+                font-size: 30px;
+                padding: 6px 12px;
+                font-weight: bold;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+
+            .ql {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                margin-left: 5px;
+            }
+
+            .w3-bar {
+                color: azure;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="top-nav">FPT CO.</div>
+        </header>
+
+        <div class="w3-bar" style="background-color:#e95c0a;float:right;">
+            <a href="/trainer" class="w3-bar-item w3-button">Home</a>
+            <a class="btn btn-light" href="/logout">Logout</a>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+         
+        <article>
+            <table width="100%" border="1">
+                <tr style="background-color: rgb(70, 82, 140);color:white">
+
+
+                    <td>Course Name</td>
+                    <td>Course Id</td>
+                    <td>Trainer Id</td>
+                </tr>
+                {{#each course}}
+                    <tr>
+                        <td>{{courseName}}</td>
+                        <td>{{courseId}}</td>
+                        <td>{{trainerId}}</td>
+                        <td style="width:6%"><a id="delete" href="/delete_course?courseName={{courseName}}"
+                                style="width: 6%; color:rgb(51, 0, 255)">Delete</a></td>
+                        <td style="width: 6%; color:rgb(51, 0, 255)"><a style="color:rgb(51, 0, 255)"
+                                href="/UpdateCourse?id={{_id}}">Edit</a>
+                        </td>
+                        <td style="width: 6%; color:rgb(51, 0, 255)"><a style="color:rgb(51, 0, 255)"
+                                href="/detailCourse?id={{_id}}">Detail</a>
+                        </td>
+                    </tr>
+                {{/each}}
+            </table>
+        </article>
+
+        </div>
+        </table>
+     
+    </body>
+
+</html>
