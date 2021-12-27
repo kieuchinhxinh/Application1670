@@ -77,8 +77,8 @@ app.use('/staff', staffController)
 const trainerController = require('./controllers/trainer')
 app.use('/trainer', trainerController)
 
-// const traineeController = require('./controllers/trainee')
-// app.use('/trainee', traineeController)
+const traineeController = require('./controllers/trainee')
+app.use('/trainee', traineeController)
 
 
 
