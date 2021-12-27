@@ -7,7 +7,8 @@ const {
     deleteCategory,
     deleteCourse,
     ObjectId,
-    UpdateStaff
+    UpdateStaff,
+    UpdateTrainee,
 } = require('../databaseHandler')
 const {
     requireStaff,
@@ -189,47 +190,60 @@ router.post('/staffUpdateProfile', requireStaff, async(req, res) => {
         staff: st
     });
 })
-router.get('/staffEditTrainee', requireStaff, async(req, res) => {
+router.get('/staffUpdateTrainee', requireStaff, async(req, res) => {
     const id = req.query.id;
 
     const db = await getDB();
-    const t = await db.collection("trainee").findOne({
+    const info = await db.collection("trainee").findOne({
         _id: ObjectId(id)
     });
 
     res.render('staffEditTrainee', {
-        trainee: t
+        trainee: info
     });
 })
 router.post('/staffUpdateTrainee', requireStaff, async(req, res) => {
-    const id = req.body.txtId;
-    const nameInput = req.body.txtName;
-    const emailInput = req.body.txtEmail;
-    const ageInput = req.body.txtAge;
-    const specialtyInput = req.body.txtSpecialty;
-    const addressInput = req.body.txtAddress;
+        const id = req.body.txtId;
+        const nameInput = req.body.txtName;
+        const emailInput = req.body.txtEmail;
+        const dateofbirthInput = req.body.txtAge;
+        const educationInput = req.body.txtSpecialty;
+        const userNameInput = req.body.txtAddress;
+        const filter = {
+            _id: ObjectId(id)
+        }
+        const UpdateTrainee = {
+            $set: {
+                name: nameInput,
+                education: educationInput,
+                email: emailInput,
+                userName: userNameInput,
+                dateofbirth: dateofbirthInput,
 
-    UpdateTrainee(id, nameInput, emailInput, ageInput, specialtyInput, addressInput);
 
-    res.redirect('viewTrainee');
-})
-router.post('/searchTrainee', requireStaff, async(req, res) => {
-    const searchName = req.body.txtSearch;
+            }
+        }
 
-    const db = await getDB();
-    const searchTrainee = await db.collection("trainee").find({
-        name: searchName
-    }).toArray();
+        const db = await getDB();
+        await db.collection('trainee').updateOne(filter, UpdateTrainee);
+        const te = await db.collection('trainee').findOne({
+            _id: ObjectId(id)
+        });
 
-    res.render('viewTrainee', {
-        data: searchTrainee
+        res.render('viewTrainee', {
+            trainee: te
+        });
     })
+
+
+//End code
+router.get('/assignTrainer', (req, res) => {
+    res.render('assignTrainer')
 })
 
-
-
-router.get('/assignTrainer', requireStaff, (req, res) => {
-
+router.get('/assignTrainee', requireStaff, (req, res) => {
+    res.render('assignTrainee')
 })
+
 
 module.exports = router;
