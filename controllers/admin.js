@@ -52,13 +52,14 @@ router.post('/addTrainer', async(req, res) => {
 router.get('/addTrainer', (req, res) => {
     res.render('addTrainer')
 })
+
 router.get('/viewTrainer', async(req, res) => {
-    let listTrainer = await trainer.find();
+    let db = await getDB();
+    let results = await db.collection("trainer").find({}).toArray();
     res.render('viewTrainer', {
-        listTrainer: listTrainer
+        trainer: results
     })
 })
-
 router.post('/addStaff', async(req, res) => {
     const name = req.body.txtName
     const userName = req.body.txtUserName
