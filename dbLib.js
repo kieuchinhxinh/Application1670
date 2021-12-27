@@ -16,7 +16,7 @@ function requireAdmin(req, res, next) {
 }
 
 function requireStaff(req, res, next) {
-    if (req.session["Staff"]) {
+    if (req.session["staff"]) {
         return next()
     } else {
         res.redirect('/login')
