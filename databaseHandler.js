@@ -30,13 +30,6 @@ async function checkUserRole(nameI, passI) {
         return user.role;
     }
 }
-async function searchTrainee(searchInput) {
-    const dbo = await getDB();
-    const allTrainees = await dbo.collection("trainee").find({
-        name: searchInput
-    }).toArray();
-    return allTrainees;
-}
 async function searchCourse(searchInput) {
     const dbo = await getDB();
     const allCourse = await dbo.collection("course").find({
@@ -50,12 +43,6 @@ async function getAllTrainees() {
     return allTrainees;
 }
 
-async function getTraineeById(idInput) {
-    const dbo = await getDB();
-    return dbo.collection("trainee").findOne({
-        _id: ObjectId(idInput)
-    });
-}
 async function deleteTrainee(username) {
     const dbo = await getDB();
     await dbo.collection("trainee").deleteOne({
@@ -109,7 +96,13 @@ async function GetIDStaff(id) {
     })
     return e;
 }
-
+async function GetIDTrainee(id) {
+    const db = await getDB();
+    const te = await db.collection("trainee").findOne({
+        _id: ObjectId(id)
+    })
+    return te;
+}
 async function UpdateStaff(id, name, email, userName, address, age) {
     const staffID = {
         _id: ObjectId(id)
@@ -120,14 +113,25 @@ async function UpdateStaff(id, name, email, userName, address, age) {
     const db = await getDB();
     await db.collection("staff").updateOne(value, staffID)
 }
+
+async function UpdateTrainee(id, name, email, userName, dateofbirth, education) {
+    const traineeID = {
+        _id: ObjectId(id)
+    }
+    const value = {
+        $set: UpdateTrainee
+    }
+    const db = await getDB();
+    await db.collection("trainee").updateOne(value, traineeID)
+}
 module.exports = {
     insertObject,
     checkUserRole,
     getDB,
-    searchTrainee,
+
     searchCourse,
     getAllTrainees,
-    getTraineeById,
+
     deleteCourse,
     getCourseById,
     getAllCourse,
@@ -136,5 +140,6 @@ module.exports = {
     deleteCategory,
     deleteStaff,
     UpdateStaff,
+    UpdateTrainee,
     ObjectId,
 }
