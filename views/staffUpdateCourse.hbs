@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Edit Trainee</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <style>
+            a {
+                color: white;
+                font-size: 14px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            .global-footer {
+                list-style-type: none;
+                overflow: hidden;
+                background-color: rgb(27, 26, 26);
+                margin-top: 300px;
+                bottom: 0;
+                width: 100%;
+            }
+
+            h6 {
+                color: rgb(255, 94, 0);
+                margin-left: 100px;
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 18px;
+            }
+
+            strong {
+                font-size: 15px;
+                margin-left: 15px;
+
+            }
+
+            table {
+                font-family: 'Times New Roman', Times, serif;
+                width: 85%;
+                margin: auto;
+                height: auto;
+                padding: 10px;
+                border: 0.25px solid #9d9d9d;
+
+            }
+
+            tr,
+            td {
+                border: 0.25px solid #e7e4e4;
+                text-align: center;
+                padding: 10px;
+            }
+
+            tr,
+            td {
+                border: 0.25px solid #c4c4c4;
+                text-align: center;
+                padding: 10px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #ffffff;
+            }
+
+
+            .top-nav-index {
+                background-color: #05197d;
+                color: rgb(253, 253, 253);
+                font-size: 30px;
+                padding: 6px 12px;
+                font-weight: bold;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                margin: auto;
+            }
+
+            .ql {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                margin-left: 5px;
+            }
+
+            .w3-bar {
+                color: azure;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+
+            }
+
+            b {
+                font-family: 'Times New Roman', Times, serif;
+                background-color: rgba(247, 247, 247, 0.292);
+                float: right;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="top-nav-index">FPT CO.</div>
+        <div class="w3-bar" style="background-color:#e95c0a;float:right;">
+            <a href="/staff/staff" class="w3-bar-item w3-button">Home</a>
+
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Course Category</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewCourseCategory" class="w3-bar-item w3-button">View All Course Category</a>
+                    <a href="/staff/addCourseCategory" class="w3-bar-item w3-button">Create A Course Category</a>
+                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Course</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewCourse" class="w3-bar-item w3-button">View All Course</a>
+                    <a href="/staff/addCourse" class="w3-bar-item w3-button">Create New Course</a>
+                    <a href="/staff/editCourse" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Trainee</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewTrainee" class="w3-bar-item w3-button">View All Trainee</a>
+                    <a href="/staff/addTrainee" class="w3-bar-item w3-button">Create New Trainee</a>
+                    <a href="/staff/editTrainee" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Trainer</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewTrainer" class="w3-bar-item w3-button">View All Trainer</a>
+                    <a href="/staff/addTrainer" class="w3-bar-item w3-button">Create New Trainer</a>
+                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Staff</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a href="/staff/viewStaff" class="w3-bar-item w3-button">View Staff Account</a>
+                    <a href="admin/addStaff" class="w3-bar-item w3-button">Create New Staff</a>
+                    <a href="/staff/staffProfile" class="w3-bar-item w3-button">Profile</a>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <h6>Update Course Page</h6>
+        <br>
+        <form action="staffUpdateCourse" method="POST"
+            style="font-family: 'Times New Roman', Times, serif; margin-left:30%; ">
+
+            <input type="hidden" name="txtId" value="{{course._id}}">
+
+            Course Name: <input type="text" name="txtName" value="{{course.courseName}}" style="margin-left: 5.1%;" /><br><br>
+            Course Id: <input type="text" name="txtCourseId" value="{{course.courseId}}" style="margin-left: 3%;" />
+            <br><br>
+            TrainerId: <input type="text" name="txtTrainerId" value="{{course.trainerId}}" style="margin-left: 7.3%;"><br><br>
+       
+            <br><br>
+            <input type="submit" value="Update" style="margin-left: 30%;">
+
+            <a href="/staff/viewCourse" style="text-decoration: none">Cancel</a>
+
+        </form>
+    </body>
+
+</html>
