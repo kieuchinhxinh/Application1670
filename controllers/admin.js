@@ -37,7 +37,7 @@ router.post('/addTrainer', async(req, res) => {
     const specialty = req.body.txtSpecialty
     const address = req.body.txtAddress
 
-    const trainer = {
+    const newTrainer = {
         name: name,
         userName: userName,
         age: age,
@@ -45,8 +45,8 @@ router.post('/addTrainer', async(req, res) => {
         specialty: specialty,
         address: address
     }
-    await insertObject("trainer", trainer)
-    res.redirect('/admin')
+    await insertObject("trainer", newTrainer)
+    res.redirect('admin')
 
 })
 router.get('/addTrainer', (req, res) => {
