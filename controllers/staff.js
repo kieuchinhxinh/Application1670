@@ -9,6 +9,7 @@ const {
     ObjectId,
     UpdateStaff,
     UpdateTrainee,
+    UpdateCourse
 } = require('../databaseHandler')
 const {
     requireStaff,
@@ -234,15 +235,46 @@ router.post('/staffUpdateTrainee', requireStaff, async(req, res) => {
             trainee: te
         });
     })
+  
 
+router.get('/staffUpdateCourse', requireStaff, async(req, res) => {
+    const id = req.query.id;
 
-//End code
-router.get('/assignTrainer', (req, res) => {
-    res.render('assignTrainer')
+    const db = await getDB();
+    const info = await db.collection("course").findOne({
+        _id: ObjectId(id)
+    });
+
+    res.render('staffUpdateCourse', {
+        course: info
+    });
 })
+router.post('/staffUpdateCourse', requireStaff, async(req, res) => {
+    const id = req.body.txtId;
+    const courseName = req.body.txtName
+    const courseId = req.body.txtCourseId
+    const trainerId = req.body.txtTrainerId
+    const filter = {
+        _id: ObjectId(id)
+    }
+    const UpdateCourse = {
+        $set: {
+            courseName: courseName,
+            courseId: courseId,
+            trainerId: trainerId,
 
-router.get('/assignTrainee', requireStaff, (req, res) => {
-    res.render('assignTrainee')
+        }
+    }
+
+    const db = await getDB();
+    await db.collection('course').updateOne(filter, UpdateCourse);
+    const c = await db.collection('course').findOne({
+        _id: ObjectId(id)
+    });
+
+    res.render('viewCourse', {
+        course: c
+    });
 })
 
 
