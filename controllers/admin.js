@@ -79,11 +79,18 @@ router.post('/addStaff', async(req, res) => {
     res.redirect('/admin')
 
 })
-router.get('/viewStaff', async(req, res) => {
+router.get('/adViewStaff', async(req, res) => {
     let db = await getDB();
     let results = await db.collection("staff").find({}).toArray();
-    res.render('viewStaff', {
+    res.render('adViewStaff', {
         staff: results
+    })
+})
+router.get('/adViewTrainee', async(req, res) => {
+    let db = await getDB();
+    let results = await db.collection("trainee").find({}).toArray();
+    res.render('adViewTrainee', {
+        trainee: results
     })
 })
 
@@ -93,6 +100,6 @@ router.get('/addStaff', (req, res) => {
 router.get('/delete_staff', async(req, res) => {
     const us = req.query.userName;
     await deleteStaff(us);
-    res.redirect('viewStaff')
+    res.redirect('adViewStaff')
 })
 module.exports = router;
