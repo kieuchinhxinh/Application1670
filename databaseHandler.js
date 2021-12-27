@@ -67,12 +67,7 @@ async function getAllCourse() {
     return allCourse;
 }
 
-async function getCourseById(idInput) {
-    const dbo = await getDB();
-    return dbo.collection("course").findOne({
-        _id: ObjectId(idInput)
-    });
-}
+
 async function deleteCourse(coursename) {
     const dbo = await getDB();
     await dbo.collection("course").deleteOne({
@@ -113,6 +108,23 @@ async function UpdateStaff(id, name, email, userName, address, age) {
     const db = await getDB();
     await db.collection("staff").updateOne(value, staffID)
 }
+async function GetIDCourse(id) {
+    const db = await getDB();
+    const c = await db.collection("course").findOne({
+        _id: ObjectId(id)
+    })
+    return c;
+}
+async function UpdateCourse(id, courseName, courseId, trainerId) {
+    const courseID = {
+        _id: ObjectId(id)
+    }
+    const value = {
+        $set: UpdateCourse(id, courseName, courseId, trainerId)
+    }
+    const db = await getDB();
+    await db.collection("course").updateOne(value, courseID)
+}
 
 async function UpdateTrainee(id, name, email, userName, dateofbirth, education) {
     const traineeID = {
@@ -128,18 +140,16 @@ module.exports = {
     insertObject,
     checkUserRole,
     getDB,
-
     searchCourse,
     getAllTrainees,
-
     deleteCourse,
-    getCourseById,
     getAllCourse,
-    getCourseById,
+
     deleteTrainee,
     deleteCategory,
     deleteStaff,
     UpdateStaff,
     UpdateTrainee,
     ObjectId,
+    UpdateCourse,
 }
