@@ -3,7 +3,9 @@ const session = require('express-session')
 const { checkUserRole } = require('./databaseHandler')
 const {
     requiresLogin,
-    requiresAdmin
+    requiresAdmin,requireStaff,
+    requireTrainer,
+    requireTrainee
 } = require('./dbLib')
 var cookieParser = require('cookie-parser')
 
