@@ -67,7 +67,7 @@ app.get('/logout', (req, res) => {
     req.session.destroy()
     res.render('login')
 })
-//ví dụ
+
 const adminController = require('./controllers/admin')
 app.use('/admin', adminController)
 

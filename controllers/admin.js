@@ -52,7 +52,7 @@ router.post('/addTrainer', async(req, res) => {
 router.get('/addTrainer', (req, res) => {
     res.render('addTrainer')
 })
-
+//
 router.get('/viewTrainer', async(req, res) => {
     let db = await getDB();
     let results = await db.collection("trainer").find({}).toArray();
