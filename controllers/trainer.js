@@ -57,9 +57,7 @@ router.get('/viewTraineegrade', async(req, res) => {
 
 
 
-router.get('/', (req, res) => {
-    res.render('staff')
-})
+
 router.get('/addTrainee', (req, res) => {
         res.render('addTrainee')
     })
@@ -118,7 +116,7 @@ router.post('/trainerAddCourse', async(req, res) => {
 
     }
     await insertObject("course", newCourse)
-    res.redirect('trainerIndex')
+    res.redirect('/trainer')
 
 })
 
