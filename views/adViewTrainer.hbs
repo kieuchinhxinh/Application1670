@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> View All Trainer</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <style>
+            a {
+                color: white;
+            }
+
+
+            .top-nav-index {
+                background-color: #002147;
+                color: rgb(255, 255, 255);
+                font-size: 28px;
+                padding: 10px 15px;
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif
+            }
+
+            .w3-bar {
+                color: rgb(255, 255, 255);
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+            }
+
+            table {
+                font-family: 'Times New Roman', Times, serif;
+                border-collapse: collapse;
+                width: 80%;
+                margin: auto;
+                height: auto;
+                padding: 20px;
+                border: 0.25px rgb(187, 194, 194);
+
+            }
+
+            tr,
+            td {
+                border: 0.25px solid #99a0ae;
+                text-align: center;
+                padding: 10px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #ffffff;
+            }
+        </style>
+
+    </head>
+   
+
+    <body>
+        <div class="top-nav-index">FPT CO.</div>
+        <div class="w3-bar" style="background-color:#C02F2F;float:right;">
+            <a href="/admin/admin" class="w3-bar-item w3-button">Home</a></div>
+        <br>
+
+        <br>
+        <article>
+            <table width="100%" border="1">
+                <tr style="background-color: rgb(70, 82, 140);color:white">
+                    <td>Full Name</td>
+                    <td>User Name</td>
+                    <td>Age</td>
+                    <td>Email</td>
+                    <td>Address</td>
+                    <td>Specialty</td>
+                    <td>Phone</td>
+                </tr>
+                {{#each trainer}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{userName}}</td>
+                        <td>{{age}}</td>
+                        <td>{{email}}</td>
+                        <td>{{address}}</td>
+                        <td>{{specialty}}</td>
+                        <td>{{phone}}</td>
+
+                        <td style="width:6%"><a id="delete" href="/admin/delete_trainer?userName={{name}}"
+                                style="width: 6%; color:rgb(51, 0, 255)">Delete</a></td>
+                        <td style="width:6%"><a href="/staff/edit?id={{_id}}"
+                                style="width: 6%;color:rgb(51, 0, 255)">Edit</a>
+                        </td>
+                    </tr>
+                {{/each}}
+            </table>
+        </article>
+
+        
+
+    </body>
+
+</html>
