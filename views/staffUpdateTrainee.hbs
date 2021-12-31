@@ -5,104 +5,119 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> View All Trainee</title>
+        <title> Edit Trainee</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-        <style>
-            a {
-                color: white;
-                font-size: 14px;
-                font-family: 'Times New Roman', Times, serif;
-            }
-
-            .global-footer {
-                list-style-type: none;
-                overflow: hidden;
-                background-color: rgb(27, 26, 26);
-                margin-top: 300px;
-                bottom: 0;
-                width: 100%;
-            }
-
-            h6 {
-                color: rgb(255, 94, 0);
-                margin-left: 100px;
-                font-weight: bold;
-                font-family: 'Times New Roman', Times, serif;
-                font-size: 18px;
-            }
-
-            strong {
-                font-size: 15px;
-                margin-left: 15px;
-
-            }
-
-            table {
-                font-family: 'Times New Roman', Times, serif;
-                width: 85%;
-                margin: auto;
-                height: auto;
-                padding: 10px;
-                border: 0.25px solid #9d9d9d;
-
-            }
-
-            tr,
-            td {
-                border: 0.25px solid #e7e4e4;
-                text-align: center;
-                padding: 10px;
-            }
-
-            tr,
-            td {
-                border: 0.25px solid #c4c4c4;
-                text-align: center;
-                padding: 10px;
-            }
-
-            tr:nth-child(even) {
-                background-color: #ffffff;
-            }
-
-
-            .top-nav-index {
-                background-color: #05197d;
-                color: rgb(253, 253, 253);
-                font-size: 30px;
-                padding: 6px 12px;
-                font-weight: bold;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                margin: auto;
-            }
-
-            .ql {
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                margin-left: 5px;
-            }
-
-            .w3-bar {
-                color: azure;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-
-            }
-
-            b {
-                font-family: 'Times New Roman', Times, serif;
-                background-color: rgba(247, 247, 247, 0.292);
-                float: right;
-            }
-        </style>
+    <style>
+        a {
+            color: white;
+        }
+    
+        .global-footer {
+            list-style-type: none;
+            overflow: hidden;
+            background-color: rgb(27, 26, 26);
+            margin-top: 250px;
+            bottom: 0;
+            width: 100%;
+        }
+    
+        h6 {
+            color: #C00F2F;
+            margin-left: 100px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+        }
+    
+        strong {
+            font-size: 15px;
+            margin-left: 15px;
+    
+        }
+    
+        .header-nav {
+            font-size: 19px;
+            background-color: #ffffff;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: #3B5999;
+            display: block;
+            text-decoration: none;
+            overflow: hidden;
+            margin-left: 75%;
+    
+        }
+    
+        .header-nav a {
+            font-size: 19px;
+            background-color: #ffffff;
+            color: #3B5999;
+            padding: 20px 20px 8px 8px;
+            text-decoration: none;
+    
+        }
+    
+        .header-nav a:hover {
+            background-color: #D62A2A;
+            color: rgb(255, 255, 255);
+            padding: 20px 20px 8px 8px;
+        }
+    
+        .top-nav-index {
+            background-color: #002147;
+            color: rgb(255, 255, 255);
+            font-size: 28px;
+            padding: 10px 15px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif
+        }
+    
+        .w3-bar {
+            color: rgb(255, 255, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+    
+        table {
+            font-family: 'Times New Roman', Times, serif;
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+            height: auto;
+            padding: 20px;
+            border: 0.25px rgb(187, 194, 194);
+    
+        }
+    
+        tr,
+        td {
+            border: 0.25px solid #99a0ae;
+            text-align: center;
+            padding: 10px;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+    </style>
+    
     </head>
-
+    <header>
+        <div class="header-nav">
+            <a href="/">ADMIN</a>
+            <a href="/">STAFF</a>
+            <a href="/">TRAINER</a>
+            <a href="/">TRAINEE</a>
+    
+        </div>
+    </header>
+    
     <body>
         <div class="top-nav-index">FPT CO.</div>
-        <div class="w3-bar" style="background-color:#e95c0a;float:right;">
+        <div class="w3-bar" style="background-color:#C02F2F;float:right;">
             <a href="/staff/staff" class="w3-bar-item w3-button">Home</a>
 
             <div class="w3-dropdown-hover">
@@ -150,9 +165,9 @@
         <br>
         <br>
         <br>
-        <h6>Update Trainee Page</h6>
+        <h6>Edit Trainee Page</h6>
         <br>
-        <form action="UpdateTrainee" method="POST" style="font-family: 'Times New Roman', Times, serif; margin-left:30%; ">
+        <form action="staffUpdateTrainee" method="POST" style="font-family: 'Times New Roman', Times, serif; margin-left:30%; ">
 
             <input type="hidden" name="txtId" value="{{trainee._id}}">
 
@@ -160,13 +175,14 @@
             Date Of Birth: <input type="text" name="txtAge" value="{{trainee.dateofbirth}}" style="margin-left: 3%;" />
             <br><br>
             Email: <input type="email" name="txtEmail" value="{{trainee.email}}" style="margin-left: 7.3%;"><br><br>
-            Education: <input type="text" name="txtSpecialty" value="{{trainee.education}}" style="margin-left: 5%;" >
+            Education: <input type="text" name="txtEducation" value="{{trainee.education}}" style="margin-left: 5%;" >
             <br><br>
-            UserName: <input type="text" name="txtAddress" value="{{trainee.userName}}" style="margin-left: 4.7%;">
+          
+            Address: <input type="text" name="txtAddress" value="{{trainee.address}}" style="margin-left: 6.1%;">
             <br><br>
-            <input type="submit" value="Update" style="margin-left: 30%;">
+            <input type="submit" value="Update" style="margin-left: 30%; background-color:red; border:0.25px white; color:white; padding:6px 10px;">
 
-            <a href="/staff/viewTrainee" style="text-decoration: none">Cancel</a>
+            <a href="/staff/viewTrainee" style="text-decoration: none; background-color: blue; color:white; border: 0.25px white; padding: 9px 12px;">Cancel</a>
 
         </form>
     </body>
