@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,76 +13,111 @@
         <style>
             a {
                 color: white;
-                font-size: 14px;
-                font-family: 'Times New Roman', Times, serif;
             }
+
             .global-footer {
                 list-style-type: none;
                 overflow: hidden;
                 background-color: rgb(27, 26, 26);
-                margin-top: 260px;
+                margin-top: 280px;
                 bottom: 0;
                 width: 100%;
+                font-size: 14px;
             }
+
             h6 {
-                color: rgb(255, 94, 0);
+                color: #C00F2F;
                 margin-left: 100px;
                 font-weight: bold;
                 font-family: 'Times New Roman', Times, serif;
                 font-size: 18px;
             }
+
             strong {
                 font-size: 15px;
                 margin-left: 15px;
 
             }
+
+            .header-nav {
+                font-size: 19px;
+                background-color: #ffffff;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                color: #3B5999;
+                display: block;
+                text-decoration: none;
+                overflow: hidden;
+                margin-left: 75%;
+
+            }
+
+            .header-nav a {
+                font-size: 19px;
+                background-color: #ffffff;
+                color: #3B5999;
+                padding: 20px 20px 8px 8px;
+                text-decoration: none;
+
+            }
+
+            .header-nav a:hover {
+                background-color: #D62A2A;
+                color: rgb(255, 255, 255);
+                padding: 20px 20px 8px 8px;
+            }
+
+            .top-nav-index {
+                background-color: #002147;
+                color: rgb(255, 255, 255);
+                font-size: 28px;
+                padding: 10px 15px;
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif
+            }
+
+            .w3-bar {
+                color: rgb(255, 255, 255);
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+            }
+
             table {
                 font-family: 'Times New Roman', Times, serif;
-                width: 85%;
+                border-collapse: collapse;
+                width: 80%;
                 margin: auto;
                 height: auto;
-                padding: 10px;
-                border: 0.25px solid #9d9d9d;
+                padding: 20px;
+                border: 0.25px rgb(187, 194, 194);
+
             }
-            tr,td {
-                border: 0.25px solid #e7e4e4;
+
+            tr,
+            td {
+                border: 0.25px solid #99a0ae;
                 text-align: center;
                 padding: 10px;
             }
-            tr,td {
-                border: 0.25px solid #c4c4c4;
-                text-align: center;
-                padding: 10px;
-            }
+
             tr:nth-child(even) {
                 background-color: #ffffff;
             }
-            .top-nav {
-                background-color: #05197d;
-                color: rgb(253, 253, 253);
-                font-size: 30px;
-                padding: 6px 12px;
-                font-weight: bold;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-            }
-            .ql {
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                margin-left: 5px;
-            }
-            .w3-bar {
-                color: azure;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-            }
         </style>
+
     </head>
+    <header>
+        <div class="header-nav">
+            <a href="/">ADMIN</a>
+            <a href="/">STAFF</a>
+            <a href="/">TRAINER</a>
+            <a href="/">TRAINEE</a>
+
+        </div>
+    </header>
 
     <body>
-        <header>
-            <div class="top-nav">FPT CO.</div>
-        </header>
-
-<div class="w3-bar" style="background-color:#e95c0a;float:right;">
-<a href="/staff/staff" class="w3-bar-item w3-button">Home</a>
+        <div class="top-nav-index">FPT CO.</div>
+        <div class="w3-bar" style="background-color:#C02F2F;float:right;">
+            <a href="/staff/staff" class="w3-bar-item w3-button">Home</a>
             <div class="w3-dropdown-hover">
                 <button class="w3-button">Course Category</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -133,85 +169,93 @@
                 <tr style="background-color: rgb(70, 82, 140);color:white">
 
 
+
+                    <td>Category Name</td>
                     <td>Course Name</td>
-                    <td>Course Id</td>
-                    <td>Trainer Id</td>
+             
+                    <td>Description</td>
+                    <td>Tutor</td>
                 </tr>
                 {{#each course}}
                     <tr>
+                        <td>{{categoryCourse}}</td>
                         <td>{{courseName}}</td>
-                        <td>{{courseId}}</td>
-                        <td>{{trainerId}}</td>
-                       <td style="width:6%"><a id="delete" href="/staff/delete_course?courseName={{courseName}}"
-                            style="width: 6%; color:rgb(51, 0, 255)">Delete</a></td>
-                        <td style="width: 6%; color:rgb(51, 0, 255)"><a style="color:rgb(51, 0, 255)" href="/staff/staffUpdateCourse?id={{_id}}">Edit</a>
+              
+                        <td>{{descriptionCourse}}</td>
+                        <td>{{tutor}}</td>
+                        <td style="width:6%"><a id="delete" href="/staff/delete_course?courseName={{courseName}}"
+                                style="width: 6%; color:rgb(51, 0, 255)">Delete</a></td>
+                        <td style="width: 6%; color:rgb(51, 0, 255)"><a style="color:rgb(51, 0, 255)"
+                                href="/staff/staffUpdateCourse?id={{_id}}">Edit</a>
                         </td>
-                        <td style="width: 6%; color:rgb(51, 0, 255)"><a style="color:rgb(51, 0, 255)" href="/staff/detailCourse?id={{_id}}">Detail</a>
+                        <td style="width: 6%; color:rgb(51, 0, 255)"><a style="color:rgb(51, 0, 255)"
+                                href="/staff/detailCourse?id={{course_id}}">Detail</a>
                         </td>
                     </tr>
                 {{/each}}
             </table>
         </article>
 
+
         </div>
         </table>
-<div class="global-footer">
-    <div class="region region-global-footer row">
-        <div id="block-menu-menu-global-footer-with-logo" class="block block-menu  col-md-6 col-lg-3 py-4">
+        <div class="global-footer" style="   font-size: 12px;">
+            <div class="region region-global-footer row">
+                <div id="block-menu-menu-global-footer-with-logo" class="block block-menu  col-md-6 col-lg-3 py-4">
 
-            <div class="content-footer">
-                <h6> © 2021 FPT CO.</h6>
-                <ul class="menu" style="margin-left: 60px;">
-                    <li><a href="/" title="">Contact the University</a></li>
-                    <li><a href="/" title="">Accessibility</a></li>
-                    <li><a href="/" title="">Freedom of information</a></li>
-                    <li><a href="/" title="">Privacy policy & cookies</a></li>
-                    <li><a href="/" title="">Terms and conditions</a></li>
-                </ul>
+                    <div class="content-footer">
+                        <h6> © 2021 FPT CO.</h6>
+                        <ul class="menu" style="margin-left: 60px;">
+                            <li><a href="/" title="">Contact the University</a></li>
+                            <li><a href="/" title="">Accessibility</a></li>
+                            <li><a href="/" title="">Freedom of information</a></li>
+                            <li><a href="/" title="">Privacy policy & cookies</a></li>
+                            <li><a href="/" title="">Terms and conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="block-menu-menu-global-footer-study-at-camb" class="block block-menu  col-md-6 col-lg-3 py-4">
+                    <div class="content-footer">
+                        <h6>Study at FPT CO.</h6>
+                        <ul class="menu" style="margin-left: 60px;">
+                            <li><a href="/" title="">Undergraduate</a></li>
+                            <li><a href="/" title="">Postgraduate</a></li>
+                            <li><a href="/" title="">Continuing education</a></li>
+                            <li><a href="/" title="">Professional education</a></li>
+                            <li><a href="/" title="">Courses in education</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="block-menu-menu-global-footer-about-uni" class="block block-menu  col-md-6 col-lg-3 py-4">
+
+
+                    <div class="content-footer">
+                        <h6>About the University</h6>
+                        <ul class="menu" style="margin-left: 60px;">
+                            <li><a href="/" title="">How the University work</a></li>
+                            <li><a href="/" title="">Give to FPT CO.</a></li>
+                            <li><a href="/" title="">Jobs</a></li>
+                            <li><a href="/" title="">Maps</a></li>
+                            <li><a href="/" title="">Visiting the University</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="block-menu-menu-global-footer-research" class="block block-menu  col-md-6 col-lg-3 py-4">
+
+
+                    <div class="content-footer">
+                        <h6>Research at FPT CO.</h6>
+                        <ul class="menu" style="margin-left: 60px;">
+                            <li><a href="/" title="">Research news</a></li>
+                            <li><a href="/" title="">About research at FPT CO.</a></li>
+                            <li><a href="/" title="">Public engagement</a></li>
+                            <li><a href="/" title="">FPT CO A-Z</a></li>
+                            <li><a href="/" title="">Spotlight on...</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="block-menu-menu-global-footer-study-at-camb" class="block block-menu  col-md-6 col-lg-3 py-4">
-            <div class="content-footer">
-                <h6>Study at FPT CO.</h6>
-                <ul class="menu" style="margin-left: 60px;">
-                    <li><a href="/" title="">Undergraduate</a></li>
-                    <li><a href="/" title="">Postgraduate</a></li>
-                    <li><a href="/" title="">Continuing education</a></li>
-                    <li><a href="/" title="">Professional education</a></li>
-                    <li><a href="/" title="">Courses in education</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="block-menu-menu-global-footer-about-uni" class="block block-menu  col-md-6 col-lg-3 py-4">
-
-
-            <div class="content-footer">
-                <h6>About the University</h6>
-                <ul class="menu" style="margin-left: 60px;">
-                    <li><a href="/" title="">How the University work</a></li>
-                    <li><a href="/" title="">Give to FPT CO.</a></li>
-                    <li><a href="/" title="">Jobs</a></li>
-                    <li><a href="/" title="">Maps</a></li>
-                    <li><a href="/" title="">Visiting the University</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="block-menu-menu-global-footer-research" class="block block-menu  col-md-6 col-lg-3 py-4">
-
-
-            <div class="content-footer">
-                <h6>Research at FPT CO.</h6>
-                <ul class="menu" style="margin-left: 60px;">
-                    <li><a href="/" title="">Research news</a></li>
-                    <li><a href="/" title="">About research at FPT CO.</a></li>
-                    <li><a href="/" title="">Public engagement</a></li>
-                    <li><a href="/" title="">FPT CO A-Z</a></li>
-                    <li><a href="/" title="">Spotlight on...</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 
     </body>
 
