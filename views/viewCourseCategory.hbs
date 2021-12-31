@@ -5,37 +5,45 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> View All Course Category</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style>
-            a {
+           a {
                 color: white;
-                font-size: 14px;
-                font-family: 'Times New Roman', Times, serif;
             }
+        
             .global-footer {
                 list-style-type: none;
                 overflow: hidden;
                 background-color: rgb(27, 26, 26);
-                margin-top: 260px;
+                margin-top: 250px;
                 bottom: 0;
-                width: 100%;
+                width: 100%;   font-size: 14px;
             }
+        
             h6 {
-                color: rgb(255, 94, 0);
+                color: #C00F2F;
                 margin-left: 100px;
                 font-weight: bold;
                 font-family: 'Times New Roman', Times, serif;
                 font-size: 18px;
             }
+        
             strong {
                 font-size: 15px;
                 margin-left: 15px;
+        
             }
+        strong {
+            font-size: 15px;
+            margin-left: 15px;
+    
+        }    
+
             table {
-                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-family: 'Times New Roman', Times, serif;
                 border-collapse: collapse;
                 width: 80%;
                 margin: auto;
@@ -61,16 +69,19 @@
                 font-size: 30px;
                 padding: 6px 12px;
                 font-weight: bold;
-                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-family: 'Times New Roman', Times, serif;
             }
             .w3-bar {
-            color: white;   font-family: Georgia, 'Times New Roman', Times, serif;
+          color: rgb(255, 255, 255);
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+      
         }
         </style>
     </head>    
 <body>
     <header><div class="top-nav">FPT CO.</div></header>
-    <div class="w3-bar" style="background-color:#e95c0a;float:right;">
+    <div class="w3-bar" style="background-color:#C02F2F;float:right;">
     <a href="/staff/staff" class="w3-bar-item w3-button">Home</a>
     <div class="w3-dropdown-hover">
     <button class="w3-button">Course Category</button>
@@ -115,15 +126,15 @@
         <article>
             <table width="100%" border="1">
                 <tr style="background-color: rgb(70, 82, 140);color:white">
-                    <td>Course Name</td>
+                    <td>Category Name</td>
                     <td>Description</td>
                 </tr>
                 {{#each coursecategory}}
                     <tr>
-                        <td style="font-weight: bold;">{{coursecategoryName}}</td>
+                        <td style="font-weight: bold;">{{categoryName}}</td>
                         <td style="width: 68%;">{{description}}</td>
 
-                        <td style="width:6%"><a id="delete" href="/staff/delete_category?coursecategoryName={{coursecategoryName}}"
+                        <td style="width:6%"><a id="delete" href="/staff/delete_category?categoryName={{categoryName}}"
                                 style="width: 6%; color:rgb(51, 0, 255)">Delete</a></td>
                         <td style="width: 6%;color:rgb(51, 0, 255)"><a  style="width: 6%;color:rgb(51, 0, 255)"
                                 href="/editCourse?id={{_id}}">Edit</a></td>
@@ -133,7 +144,7 @@
         </article>
 
         </div>
-<div class="global-footer">
+<div class="global-footer" style="font-size:12px">
     <div class="region region-global-footer row">
         <div id="block-menu-menu-global-footer-with-logo" class="block block-menu  col-md-6 col-lg-3 py-4">
             <div class="content-footer">
