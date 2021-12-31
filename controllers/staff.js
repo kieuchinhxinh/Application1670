@@ -289,22 +289,6 @@ router.post('/staffUpdateTrainee', requireStaff, async(req, res) => {
     res.redirect('viewTrainee')
 })
 
-router.post('/searchTrainee', requireStaff, async(req, res) => {
-    const searchName = req.body.txtSearch;
-
-    const db = await getDB();
-
-    if (searchName == "") {
-        res.redirect('viewTrainee');
-    }
-    const searchName = await db.collection("trainee").find({
-        name: searchName
-    }).toArray();
-
-    res.render('viewTrainee', {
-        data: searchTrainee
-    })
-})
 
 
 //End code
