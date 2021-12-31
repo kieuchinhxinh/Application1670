@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> View All Course Category</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            a {
+                color: white;
+            }
+
+           
+           
+
+            .top-nav-index {
+                background-color: #002147;
+                color: rgb(255, 255, 255);
+                font-size: 28px;
+                padding: 10px 15px;
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif
+            }
+
+            .w3-bar {
+                color: rgb(255, 255, 255);
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+            }
+        </style>
+
+    </head>
+    
+
+    <body>
+        <div class="top-nav-index">FPT CO.</div>
+        <div class="w3-bar" style="background-color:#C02F2F;float:right;">
+            <a href="/trainer" class="w3-bar-item w3-button">Home</a>
+         
+        </div>
+        <br>
+        <br>
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Create A Course</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="py-1">
+                        <form method="POST" action="trainerAddCourse" style="font-family: Arial, Helvetica, sans-serif;">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Course Name</label>
+                                                <input class="form-control" type="text" name="txtNameCourse"
+                                                    placeholder="Course Name">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Category Name</label>
+                                                <input class="form-control" type="req.body.txtCategoryCourse"
+                                                    placeholder="Description" name="description">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Tutor</label>
+                                                <input class="form-control" type="text" name="txtTutor" placeholder="Tutor">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <input class="form-control" type="txtDescription" placeholder="Description"
+                                                    name="description">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <input type="submit" value="Add Course">
+                    </div>
+        
+                    </form>
+        
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </body>
+
+</html>

@@ -1,3 +1,5 @@
+
+
 const express = require('express')
 const {
     insertObject,
@@ -93,22 +95,28 @@ router.post('/addCourseCategory', async(req, res) => {
     res.redirect('/staff')
 
 })
-router.get('/addCourse', (req, res) => {
-    res.render('addCourse')
+router.get('/trainerAddCourse', (req, res) => {
+    res.render('trainerAddCourse')
 })
-router.post('/addCourse', async(req, res) => {
-    const name = req.body.txtName
-    const description = req.body.txtDescription
-    const trainerId = req.body.txtTrainerId
+router.post('/trainerAddCourse', async(req, res) => {
+    const courseId = req.body.txtCourseID;
+    const courseName = req.body.txtNameCourse;
+    const tutor = req.body.txtTutor;
+    const categoryName = req.body.txtCategoryCourse;
+    const description = req.body.txtDescription;
+    const trainee = [];
 
     const newCourse = {
-        courseName: name,
-        description: description,
-        trainerId: trainerId,
+        courseID: courseId,
+        courseName: courseName,
+        tutor: tutor,
+        categoryCourse: categoryName,
+        descriptionCourse: description,
+        trainee: trainee
 
     }
     await insertObject("course", newCourse)
-    res.redirect('/staff')
+    res.redirect('trainerIndex')
 
 })
 
@@ -121,6 +129,71 @@ router.get('/trainerViewCourse', async(req, res) => {
     })
 
 })
+
+
+router.get('/trainerProfile', requireTrainer, async(req, res) => {
+    const user = req.session["trainer"]
+    const db = await getDB();
+    const info = await db.collection("trainer").findOne({
+        "userName": user.name
+    });
+
+    res.render('trainerProfile', {
+        trainer: info
+    });
+})
+
+
+router.get('/trainerUpdateProfile', requireTrainer, async(req, res) => {
+    const user = req.session["trainer"]
+    const db = await getDB();
+    const info = await db.collection("trainer").findOne({
+        "userName": user.name
+    });
+
+    res.render('trainerUpdateProfile', {
+        trainer: info
+    });
+})
+router.post('/trainerUpdateProfile', requireTrainer, async(req, res) => {
+    const id = req.body.txtId;
+    const name = req.body.txtName;
+    const userName = req.body.txtUserName;
+    const age = req.body.txtAge;
+    const phone = req.body.txtPhone;
+    const email = req.body.txtEmail;
+    const address = req.body.txtAddress;
+    const specialty= req.body.txtSpecialty;
+    const filter = {
+        // @ts-ignore
+        _id: ObjectId(id)
+    }
+    const updateToTrainers = {
+        $set: {
+            name: name,
+            userName: userName,
+            age: age,
+            phone:phone,
+            email: email,
+            address: address,
+            specialty: specialty,
+
+
+        }
+    }
+
+    const db = await getDB();
+    await db.collection('trainer').updateOne(filter, updateToTrainer);
+    const st = await db.collection('trainer').findOne({
+        // @ts-ignore
+        _id: ObjectId(id)
+    });
+
+    res.render('/trainer', {
+        trainer: st
+    });
+})
+
 module.exports = router;
 
 
@@ -203,7 +276,7 @@ module.exports = router;
 //     res.render('trainerViewTrainee', {
 //         trainee : results
 //     })
-    
+
 // })
 // router.get('/viewTraineegrade', async(req, res) => {
 //     let db = await getDB();
@@ -278,4 +351,4 @@ module.exports = router;
 // })
 
 
-// module.exports = router;
+// module.exports = router; 

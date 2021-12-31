@@ -24,7 +24,7 @@ function requireStaff(req, res, next) {
 }
 
 function requireTrainer(req, res, next) {
-    if (req.session["Trainer"]) {
+    if (req.session["trainer"]) {
         return next()
     } else {
         res.redirect('/login')

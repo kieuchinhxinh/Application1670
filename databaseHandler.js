@@ -125,6 +125,17 @@ async function UpdateStaff(id, name, email, userName, address, age) {
     const db = await getDB();
     await db.collection("staff").updateOne(value, staffID)
 }
+async function UpdateTrainer(id, name, email, userName, address, age) {
+    const trainerID = {
+        _id: ObjectId(id)
+    }
+    const value = {
+        $set: UpdateTrainer
+    }
+    const db = await getDB();
+    await db.collection("traier").updateOne(value, trainerID)
+}
+
 
 async function UpdateCourse(id, courseName, courseId, trainerId) {
     const courseID = {
@@ -175,6 +186,7 @@ module.exports = {
     deleteStaff,
     GetIDCourse,
     deleteTrainer,
-    searchTrainee
+    searchTrainee,
+    UpdateTrainer
 
 }
