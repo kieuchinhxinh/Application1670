@@ -2,7 +2,8 @@ const express = require('express')
 const {
     insertObject,
     deleteStaff,
-    getDB
+    getDB,
+    deleteTrainer,
 } = require('../databaseHandler')
 const {
     requireAdmin
@@ -10,6 +11,9 @@ const {
 const router = express.Router()
 
 router.get('/', (req, res) => {
+    res.render('admin')
+})
+router.get('/admin', (req, res) => {
     res.render('admin')
 })
 
@@ -37,7 +41,7 @@ router.post('/addTrainer', async(req, res) => {
     const specialty = req.body.txtSpecialty
     const address = req.body.txtAddress
 
-    const newTrainer = {
+    const trainer = {
         name: name,
         userName: userName,
         age: age,
@@ -45,18 +49,18 @@ router.post('/addTrainer', async(req, res) => {
         specialty: specialty,
         address: address
     }
-    await insertObject("trainer", newTrainer)
-    res.redirect('admin')
+    await insertObject("trainer", trainer)
+    res.redirect('/admin')
 
 })
 router.get('/addTrainer', (req, res) => {
     res.render('addTrainer')
 })
-//
-router.get('/viewTrainer', async(req, res) => {
+
+router.get('/adViewTrainer', async(req, res) => {
     let db = await getDB();
     let results = await db.collection("trainer").find({}).toArray();
-    res.render('viewTrainer', {
+    res.render('adViewTrainer', {
         trainer: results
     })
 })
@@ -102,4 +106,11 @@ router.get('/delete_staff', async(req, res) => {
     await deleteStaff(us);
     res.redirect('adViewStaff')
 })
+
+router.get('/delete_trainer', async(req, res) => {
+    const us = req.query.userName;
+    await deleteStaff(us);
+    res.redirect('adViewTrainer')
+})
+
 module.exports = router;
