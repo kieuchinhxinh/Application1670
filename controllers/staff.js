@@ -26,7 +26,7 @@ const {
     requireStaff
 } = require('../dbLib')
 const router = express.Router()
-router.get('/', requireStaff, (req, res) => {
+router.get('/', (req, res) => {
     res.render('staff')
 })
 
@@ -35,10 +35,13 @@ router.get('/addTrainee', (req, res) => {
     })
     //Submit add User
 
-router.get('/addCourseCategory', requireStaff, (req, res) => {
+router.get('/addCourseCategory', (req, res) => {
     res.render('addCourseCategory')
 })
-router.post('/addTrainee', requireStaff, async(req, res) => {
+router.get('/staff', (req, res) => {
+    res.render('staff')
+})
+router.post('/addTrainee', async(req, res) => {
 
     const userName = req.body.txtUser;
     const pass = req.body.txtPass;
@@ -71,7 +74,7 @@ router.post('/addTrainee', requireStaff, async(req, res) => {
 
     res.redirect('viewTrainee');
 })
-router.post('/addCourseCategory', requireStaff, async(req, res) => {
+router.post('/addCourseCategory', async(req, res) => {
         const ccName = req.body.txtName
         const description = req.body.txtDescription
         const newCourseCategory = {
@@ -87,7 +90,7 @@ router.post('/addCourseCategory', requireStaff, async(req, res) => {
 router.get('/addCourse', (req, res) => {
     res.render('addCourse')
 })
-router.post('/addCourse', requireStaff, async(req, res) => {
+router.post('/addCourse', async(req, res) => {
     const courseId = req.body.txtCourseID;
     const courseName = req.body.txtNameCourse;
     const tutor = req.body.txtTutor;
@@ -111,7 +114,7 @@ router.post('/addCourse', requireStaff, async(req, res) => {
 
 // @ts-ignore
 // @ts-ignore
-router.get('/viewTrainee', requireStaff, async(req, res) => {
+router.get('/viewTrainee', async(req, res) => {
     let db = await getDB();
     let results = await db.collection("trainee").find({}).toArray();
     res.render('viewTrainee', {
@@ -119,7 +122,7 @@ router.get('/viewTrainee', requireStaff, async(req, res) => {
     })
 })
 
-router.get('/viewCourse', requireStaff, async(req, res) => {
+router.get('/viewCourse', async(req, res) => {
     let db = await getDB();
     let results = await db.collection("course").find({}).toArray();
     res.render('viewCourse', {
@@ -127,7 +130,7 @@ router.get('/viewCourse', requireStaff, async(req, res) => {
     })
 })
 
-router.get('/viewStaff', requireStaff, async(req, res) => {
+router.get('/viewStaff', async(req, res) => {
     let db = await getDB();
     let results = await db.collection("staff").find({}).toArray();
     res.render('viewStaff', {
@@ -135,7 +138,7 @@ router.get('/viewStaff', requireStaff, async(req, res) => {
     })
 })
 
-router.get('/viewCourseCategory', requireStaff, async(req, res) => {
+router.get('/viewCourseCategory', async(req, res) => {
     let db = await getDB();
     let results = await db.collection("coursecategory").find({}).toArray();
     res.render('viewCourseCategory', {
@@ -143,20 +146,16 @@ router.get('/viewCourseCategory', requireStaff, async(req, res) => {
     })
 })
 
-router.get('/staff', requireStaff, async(req, res) => {
-
-        res.render('staff')
-    })
-    // @ts-ignore
-    // @ts-ignore
-router.get('/viewTrainer', requireStaff, async(req, res) => {
+// @ts-ignore
+// @ts-ignore
+router.get('/viewTrainer', async(req, res) => {
     let db = await getDB();
     let results = await db.collection("trainer").find({}).toArray();
     res.render('viewTrainer', {
         trainer: results
     })
 })
-router.post('/editCourseCategory', requireStaff, async(req, res) => {
+router.post('/editCourseCategory', async(req, res) => {
     const id = req.body.txtId;
     const coursecategory_Name = req.body.txtCourseCategoryName;
     const description_CourseCategory = req.body.txtDescriptionCourseCategory;
@@ -180,7 +179,7 @@ router.post('/editCourseCategory', requireStaff, async(req, res) => {
         bas: coursecategory
     })
 })
-router.get('/staffUpdateTrainee', requireStaff, async(req, res) => {
+router.get('/staffUpdateTrainee', async(req, res) => {
     const id = req.query.id;
     const db = await getDB();
     const te = await db.collection("trainee").findOne({
@@ -191,24 +190,24 @@ router.get('/staffUpdateTrainee', requireStaff, async(req, res) => {
         trainee: te
     });
 })
-router.get('/delete_category', requireStaff, async(req, res) => {
+router.get('/delete_category', async(req, res) => {
     const ccn = req.query.coursecategoryName;
     await deleteCategory(ccn);
     res.redirect('viewCourseCategory')
 })
 
-router.get('/delete_course', requireStaff, async(req, res) => {
+router.get('/delete_course', async(req, res) => {
     const cn = req.query.courseName;
     await deleteCourse(cn);
     res.redirect('viewCourse')
 })
-router.get('/delete_trainee', requireStaff, async(req, res) => {
+router.get('/delete_trainee', async(req, res) => {
     const us = req.query.userName;
     await deleteTrainee(us);
     res.redirect('viewTrainee')
 })
 
-router.get('/staffProfile', requireStaff, async(req, res) => {
+router.get('/staffProfile', async(req, res) => {
     const user = req.session["staff"]
     const db = await getDB();
     const info = await db.collection("staff").findOne({
@@ -221,7 +220,7 @@ router.get('/staffProfile', requireStaff, async(req, res) => {
 })
 
 
-router.get('/staffUpdateProfile', requireStaff, async(req, res) => {
+router.get('/staffUpdateProfile', async(req, res) => {
     const user = req.session["staff"]
     const db = await getDB();
     const info = await db.collection("staff").findOne({
@@ -232,7 +231,7 @@ router.get('/staffUpdateProfile', requireStaff, async(req, res) => {
         staff: info
     });
 })
-router.post('/staffUpdateProfile', requireStaff, async(req, res) => {
+router.post('/staffUpdateProfile', async(req, res) => {
     const id = req.body.txtId;
     const name = req.body.txtName;
     const age = req.body.txtAge;
@@ -268,7 +267,7 @@ router.post('/staffUpdateProfile', requireStaff, async(req, res) => {
     });
 })
 
-router.post('/staffUpdateTrainee', requireStaff, async(req, res) => {
+router.post('/staffUpdateTrainee', async(req, res) => {
     const id = req.body.txtId;
     const name = req.body.txtName;
     const email = req.body.txtEmail;
@@ -284,15 +283,24 @@ router.post('/staffUpdateTrainee', requireStaff, async(req, res) => {
             address: address,
             dateofbirth: dob,
         }
-
     }
-    res.redirect('viewTrainee')
+    const filter = {
+        _id: ObjectId(id)
+    }
+    const dbo = await getDB()
+    await dbo.collection("trainee").updateOne(filter, UpdateTrainee)
+    const te = await dbo.collection("trainee").findOne({
+        "_id": ObjectId(id)
+    })
+    res.render("viewTrainee", {
+        trainee: te
+    });
+
 })
 
 
-
 //End code
-router.get('/staffUpdateCourse', requireStaff, async(req, res) => {
+router.get('/staffUpdateCourse', async(req, res) => {
     const id = req.query.id;
 
     const db = await getDB();
@@ -305,20 +313,23 @@ router.get('/staffUpdateCourse', requireStaff, async(req, res) => {
         course: info
     });
 })
-router.post('/staffUpdateCourse', requireStaff, async(req, res) => {
+router.post('/staffUpdateCourse', async(req, res) => {
         const id = req.body.txtId;
         const courseName = req.body.txtName
-        const courseId = req.body.txtCourseId
-        const trainerId = req.body.txtTrainerId
+        const description = req.body.txtDescription
+        const category = req.body.txtCategory
+        const tutor = req.body.txtTutor
         const filter = {
             // @ts-ignore
             _id: ObjectId(id)
         }
         const UpdateCourse = {
             $set: {
+                id: id,
                 courseName: courseName,
-                courseId: courseId,
-                trainerId: trainerId,
+                categoryCourse: category,
+                descriptionCourse: description,
+                tutor: tutor,
 
             }
         }
@@ -342,10 +353,10 @@ router.get('/assignTrainer', (req, res) => {
 
 // @ts-ignore
 // @ts-ignore
-router.get('/assignTrainee', requireStaff, (req, res) => {
+router.get('/assignTrainee', (req, res) => {
     res.render('assignTrainee')
 })
-router.post('/addTrainer', requireStaff, async(req, res) => {
+router.post('/addTrainer', async(req, res) => {
         const name = req.body.txtName
         const userName = req.body.txtUserName
         const age = req.body.txtAge
@@ -360,41 +371,16 @@ router.post('/addTrainer', requireStaff, async(req, res) => {
             specialty: specialty,
             address: address
         }
-        await insertObject("trainers", newTrainer)
+        await insertObject("trainer", newTrainer)
         res.redirect('/staff')
 
     })
     // @ts-ignore
     // @ts-ignore
-router.get('/addTrainer', requireStaff, (req, res) => {
+router.get('/addTrainer', (req, res) => {
     res.render('addTrainer')
 })
 
-router.get('/deleteTraineeCourseDetail', requireStaff, async(req, res) => {
-        let id = req.body.id;
-        // if(req.body.hasOwnProperty(1)){
-        //     console.log("butt1 clicked");
-        // }
-        // console.log(id);
-        // @ts-ignore
-        let course_detail = await courseDetail.findById(id);
-        let index = 0;
-        for (let i = 0; i < course_detail.trainees.length; i++) {
-            if (req.body.hasOwnProperty(i)) {
-                index = i;
-                break;
-            }
-        }
-        console.log(course_detail.trainees[index]);
-        // @ts-ignore
-        await courseDetail.findByIdAndUpdate({
-            _id: id
-        }, {
-            $pull: {
-                trainees: course_detail.trainees[index]
-            }
-        })
-        res.redirect('/staff/viewCourseDetail');
-    })
-    // @ts-ignore
-module.exports = router;
+
+// @ts-ignore
+module.exports = router
