@@ -3,7 +3,9 @@
 const express = require('express')
 const {
     insertObject,
-    getDB
+    getDB,
+    ObjectId,
+    updateToTrainer
 } = require('../databaseHandler')
 const {
     requireTrainer

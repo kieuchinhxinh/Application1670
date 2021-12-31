@@ -125,7 +125,7 @@ async function UpdateStaff(id, name, email, userName, address, age) {
     const db = await getDB();
     await db.collection("staff").updateOne(value, staffID)
 }
-async function UpdateTrainer(id, name, email, userName, address, age) {
+async function UpdateTrainer(id, name, userName, age, phone, email, address, specilfy) {
     const trainerID = {
         _id: ObjectId(id)
     }
