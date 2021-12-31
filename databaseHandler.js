@@ -37,10 +37,17 @@ async function searchCourse(searchInput) {
     }).toArray();
     return allCourse;
 }
-async function getAllTrainees() {
+async function searchTrainee(searchName) {
     const dbo = await getDB();
-    const allTrainees = await dbo.collection("trainee").find({}).toArray();
-    return allTrainees;
+    const data = await dbo.collection("trainee").find({
+        name: searchName
+    }).toArray();
+    return data;
+}
+async function getAllTrainee() {
+    const dbo = await getDB();
+    const allTrainee = await dbo.collection("trainee").find({}).toArray();
+    return allTrainee;
 }
 
 async function deleteTrainee(username) {
@@ -84,6 +91,16 @@ async function deleteStaff(username) {
     });
 
 }
+async function deleteTrainer(username) {
+    const dbo = await getDB();
+    await dbo.collection("trainer").deleteOne({
+        name: username
+    });
+    await dbo.collection("Users").deleteOne({
+        userName: username
+    });
+
+}
 async function GetIDStaff(id) {
     const db = await getDB();
     const e = await db.collection("staff").findOne({
@@ -108,13 +125,7 @@ async function UpdateStaff(id, name, email, userName, address, age) {
     const db = await getDB();
     await db.collection("staff").updateOne(value, staffID)
 }
-async function GetIDCourse(id) {
-    const db = await getDB();
-    const c = await db.collection("course").findOne({
-        _id: ObjectId(id)
-    })
-    return c;
-}
+
 async function UpdateCourse(id, courseName, courseId, trainerId) {
     const courseID = {
         _id: ObjectId(id)
@@ -125,8 +136,16 @@ async function UpdateCourse(id, courseName, courseId, trainerId) {
     const db = await getDB();
     await db.collection("course").updateOne(value, courseID)
 }
+async function GetIDCourse(id) {
+    const db = await getDB();
+    const c = await db.collection("course").findOne({
+        _id: ObjectId(id),
+        course_id: ObjectId(id)
+    })
+    return c;
+}
 
-async function UpdateTrainee(id, name, email, userName, dateofbirth, education) {
+async function UpdateTrainee(id, name, email, dateofbirth, education, address) {
     const traineeID = {
         _id: ObjectId(id)
     }
@@ -136,20 +155,26 @@ async function UpdateTrainee(id, name, email, userName, dateofbirth, education) 
     const db = await getDB();
     await db.collection("trainee").updateOne(value, traineeID)
 }
+
 module.exports = {
     insertObject,
     checkUserRole,
     getDB,
     searchCourse,
-    getAllTrainees,
+    getAllTrainee,
     deleteCourse,
     getAllCourse,
     deleteTrainee,
     deleteCategory,
     deleteStaff,
     UpdateStaff,
-    UpdateTrainee,ObjectId,
+    UpdateTrainee,
+    ObjectId,
     UpdateCourse,
-    deleteCategory,deleteStaff
+    deleteCategory,
+    deleteStaff,
+    GetIDCourse,
+    deleteTrainer,
+    searchTrainee
 
 }
