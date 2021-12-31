@@ -12,8 +12,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style>a{color:white;
-    font-size: 14px;
-    font-family: 'Times New Roman', Times, serif;}
+ }
         .global-footer {
             list-style-type: none;
             overflow: hidden;
@@ -24,7 +23,7 @@
         }
     
         h6 {
-            color: rgb(255, 94, 0);
+            color: #C00F2F;
             margin-left: 100px;
             font-weight:bold;
             font-family: 'Times New Roman', Times, serif;
@@ -35,21 +34,20 @@
             font-size: 15px;
             margin-left: 15px;
     
-        }
+        }    
+
             .top-nav-index {
-                  background-color: #05197d;
-                color: rgb(255, 255, 255);
-                font-size: 30px;
-                padding: 6px 12px;
-                font-weight: bold;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                margin: auto;
+                  background-color: #002147;
+        color: rgb(255, 255, 255);
+        font-size: 28px;
+        padding: 10px 15px;
+        font-weight: bold;
+        font-family:'Times New Roman', Times, serif
             }
 
             .w3-bar {
-                color: azure;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-
+                color: rgb(255, 255, 255);
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
             }
             b{
                 font-family: 'Times New Roman', Times, serif;
@@ -87,7 +85,7 @@
 
     <body>
         <div class="top-nav-index">FPT CO.</div>
-    <div class="w3-bar" style="background-color:#e95c0a;float:right;">
+    <div class="w3-bar" style="background-color:#C02F2F;float:right;">
             <a href="index" class="w3-bar-item w3-button">Home</a>
 
             <div class="w3-dropdown-hover">
@@ -95,7 +93,7 @@
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="/staff/viewCourseCategory" class="w3-bar-item w3-button">View All Course Category</a>
                     <a href="/staff/addCourseCategory" class="w3-bar-item w3-button">Create A Course Category</a>
-                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+                    <a href="/staff/viewCourseDetail" class="w3-bar-item w3-button">Course Detail</a>
                 </div>
             </div>
             <div class="w3-dropdown-hover">
@@ -103,7 +101,7 @@
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="/staff/viewCourse" class="w3-bar-item w3-button">View All Course</a>
                     <a href="/staff/addCourse" class="w3-bar-item w3-button">Create New Course</a>
-                    <a href="/staff/editCourse" class="w3-bar-item w3-button">Edit/Update</a>
+                    <a href="/staff/editCourse" class="w3-bar-item w3-button">Course Detail</a>
                 </div>
             </div>
             <div class="w3-dropdown-hover">
@@ -119,7 +117,7 @@
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                     <a href="/staff/viewTrainer" class="w3-bar-item w3-button">View All Trainer</a>
                     <a href="/staff/addTrainer" class="w3-bar-item w3-button">Create New Trainer</a>
-                    <a href="#" class="w3-bar-item w3-button">Edit/Update</a>
+                    <a href="/staff/staffNoRole" class="w3-bar-item w3-button">Edit/Update</a>
                 </div>
             </div>
             <div class="w3-dropdown-hover">
@@ -129,7 +127,6 @@
                     <a href="admin/addStaff" class="w3-bar-item w3-button">Create New Staff</a>
                     <a href="/staff/staffProfile" class="w3-bar-item w3-button">Profile</a>
                     <a href="/logout" class="w3-bar-item w3-button">Logout</a>
-                 
                 </div>
             </div>
 
@@ -137,8 +134,8 @@
         <br> 
         <br>
       
-    <form action="/search" method="post" style="margin-left: 80%;">
-        <input class="as" type="text" name="txtName" placeholder="|"> <input class="chinh" type="submit" value="Search" href="/staff/searchCourse">
+    <form action="/searchTrainee" method="post" style="margin-left: 80%;">
+        <input class="as" type="text" name="txtName" placeholder="|"> <input class="chinh" type="submit" value="Search" href="/staff/searchTrainee">
     </form>
    
         <div class="w3-content" style="max-width:2000px;margin-top:22px">
