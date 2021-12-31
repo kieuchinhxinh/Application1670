@@ -3,20 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Admin Page</title>
+    <style>  .top-nav-index {
+                  background-color: #002147;
+        color: rgb(255, 255, 255);
+        font-size: 28px;
+        padding: 10px 15px;
+        font-weight: bold;
+        font-family:'Times New Roman', Times, serif
+            } 
+            
+            
+            </style>
 </head>
-<body>
-    <h1>Admin Page</h1>
-     <div class="header">
-        <li><a href="/admin/adminUpdate"> Update profile </a></li>
-        <li><a href="/logout"> Logout </a></li>
-    </div>
-      <div class="function">
-        <li><a href="/admin/addStaff">Create A Staff</a></li>
-        <li><a href="/admin/addTrainer">Create A Trainer</a></li>
-        <li><a href="/admin/viewTrainer"> View Trainer Account</a></li>
-        <li><a href="/admin/viewStaff">View Staff Account</a></li>     
+<body><div class="top-nav-index">FPT CO.</div>
+  <br>
+     <div class="header-nav" style="background-color:#C02F2F;  color: rgb(255, 255, 255); font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size :16px; " >
+        <a href="/admin/adminUpdate" style="margin-left:20px; padding:9px 9px; text-align:center"> Update profile </a>
+        <a href="/logout" style="padding: 12px 12px;"> Logout </a>
+        <a href="/admin/addStaff" style="padding: 12px 12px;">Create A Staff</a>
+        <a href="/admin/addTrainer" style="padding: 12px 12px;">Create A Trainer</a>
+        <a href="/admin/adViewTrainer" style="padding: 12px 12px;"> View Trainer Account</a>
+        <a href="/admin/adViewStaff" style="padding: 12px 12px;">View Staff Account</a>
+        <a href="/admin/adViewTrainee" style="padding: 12px 12px;">View Trainee Account</a>
+        <img src="https://cms.greenwich.edu.vn/pluginfile.php/1/theme_adaptable/p1/1627617472/socialbg.png" style="width:100%;height:680px;">
     </div>
 </body>
 </html>
