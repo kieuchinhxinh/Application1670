@@ -35,14 +35,12 @@ app.post('/login', async(req, res) => {
             role: role
         }
         res.redirect('/admin')
-
     } else if (role == "staff") {
         req.session["staff"] = {
             name: name,
             role: role
         }
         res.redirect('/staff')
-
     } else if (role == "trainee") {
         req.session["trainee"] = {
             name: name,

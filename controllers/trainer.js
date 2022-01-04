@@ -105,19 +105,15 @@ router.post('/trainerAddCourse', async(req, res) => {
     const categoryName = req.body.txtCategoryCourse;
     const description = req.body.txtDescription;
     const trainee = [];
-
     const newCourse = {
         courseID: courseId,
         courseName: courseName,
         tutor: tutor,
         categoryCourse: categoryName,
         descriptionCourse: description,
-        trainee: trainee
-
-    }
+        trainee: trainee}
     await insertObject("course", newCourse)
     res.redirect('/trainer')
-
 })
 
 
@@ -163,32 +159,19 @@ router.post('/trainerUpdateProfile', requireTrainer, async(req, res) => {
     const phone = req.body.txtPhone;
     const email = req.body.txtEmail;
     const address = req.body.txtAddress;
-    const specialty= req.body.txtSpecialty;
-    const filter = {
-        // @ts-ignore
-        _id: ObjectId(id)
-    }
+    const specialty= req.body.txtSpecialty;// @ts-ignore
+    const filter = {_id: ObjectId(id)}
     const updateToTrainers = {
-        $set: {
-            name: name,
+        $set: { name: name,
             userName: userName,
             age: age,
             phone:phone,
             email: email,
             address: address,
-            specialty: specialty,
-
-
-        }
-    }
-
+            specialty: specialty, }}
     const db = await getDB();
-    await db.collection('trainer').updateOne(filter, updateToTrainer);
-    const st = await db.collection('trainer').findOne({
-        // @ts-ignore
-        _id: ObjectId(id)
-    });
-
+    await db.collection('trainer').updateOne(filter, updateToTrainer);// @ts-ignore
+    const st = await db.collection('trainer').findOne({ _id: ObjectId(id)});
     res.render('/trainer', {
         trainer: st
     });
